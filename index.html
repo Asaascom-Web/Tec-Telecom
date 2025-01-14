@@ -1,124 +1,510 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Aeroer">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-	<title>TecTelecom - Coming Soon</title>
-    <link rel="icon" href="assets/img/apple-touch-icon.png" type="image/x-icon">
+    <title>Home | TEC Telecom</title>
+    <link rel="icon" href="../public/tec-telecom-6-1@2x.png" type="image/png">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="TEC Telecom - Leading telecommunications engineering solutions provider in Malaysia specializing in FTTH, wireless design, fiber repair, and smart home solutions.">
+    <meta name="keywords" content="telecommunications engineering, FTTH, Fiber to the Home, fiber optic repair, inbuilding wireless design, smart home solutions, , transmission network engineering, radio access network engineering, Malaysia telecom">
+    <meta name="author" content="TEC Telecom">
 
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="TEC Telecom - Telecommunications Engineering Solutions">
+    <meta property="og:description" content="Leading telecommunications engineering solutions provider in Malaysia">
+    <meta property="og:image" content="../public/tec-telecom-6-1@2x.png">
+    <meta property="og:url" content="https://tectelecom.com.my">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="geo.region" content="MY" />
+    <meta name="geo.placename" content="Seri Kembangan, Selangor" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tectelecom.com.my" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/navigation-menu.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/home.css" as="style">
+    <link rel="preload" href="/assets/css/navigation-menu.css" as="style">
+    <link rel="preload" href="../public/tec-telecom-6-1@2x.png" as="image">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"  rel="stylesheet" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Swiper - Slider CSS -->
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!--Lucide CDN links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.iife.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
+    </script>
+
+    <!--Font Awesome CSS -->
+    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "TEC Telecom",
+            "alternateName": "TEC",
+            "url": "https://www.tectelecom.com.my",
+            "logo": "https://www.tectelecom.com.my/public/tec-telecom-6-1@2x.png",
+            "sameAs": [
+            "https://www.instagram.com/tectelecom_malaysia/"
+            "https://www.tiktok.com/@tectelecom_malaysia/"
+            ]
+        }
+    </script>
+
+    <!-- Scripts-->
+    <script src="/assets/js/home.js" defer></script>
+    <script src="/assets/js/navigation-menu.js" defer></script>
+    <script src="/assets/js/performance.js"></script>
 </head>
-<body class="has-loading-screen ts-theme-dark">
+<body>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-data">
+                <a href="#" class="nav-logo">
+                    <img class="logo" src="../public/tec-telecom-6-1@2x.png" height="35px" width="auto" alt="TEC Telecom Logo"  fetchpriority="high">
+                </a>
 
-    <!--*************************************************************************************************************-->
-    <!--************ MAIN SCREEN ************************************************************************************-->
-    <!--*************************************************************************************************************-->
+                <div class="nav-toggle" id="nav--toggle">
+                    <i class="ri-menu-line nav-burger"></i>
+                    <i class="ri-close-line nav-close"></i>
+                </div>
 
-    <div class="ts-page-wrapper">
-        <div class="container">
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="nav--menu">
+                    <ul class="nav-list">
+                        <li><a href="/index.html" class="nav-link">Home</a></li>
 
-            <!--NAVIGATION ******************************************************************************************-->
-            <header id="header">
-                <nav class="navbar navbar-dark ts-separate-bg-element">
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/img/tectelecom_logo.png" alt="Tech Company Aeroer Live">
-                    </a>
-                </nav>
-                <!--end navbar-->
-            </header>
-            <!--end #header-->
-
-            <!--CONTENT *********************************************************************************************-->
-            <main id="main-content">
-                <div class="ts-content-wrapper">
-                    <div class="row">
-                        <!--Page Title-->
-                        <div class="col-md-6">
-                            <h1>Under Development</h1>
-                            <p>
-                                We are currently working on developing our website and will be launching it soon!
-                            </p>
-                            <a href="" class="btn btn-primary mr-2 ts-open-side-panel">Stay Tuned 2025</a>
-                        </div>
-                        <!--end col-md-6-->
-                        <!--Count Down-->
-                        <div class="col-md-6">
-                            <div class="text-center my-4">
-                                <div class="ts-count-down" data-date="January 13, 2025"></div>
-                                <!--end ts-count-down-->
+                        <li class="dropdown-item">
+                            <div class="nav-link">
+                               About Us <i class="ri-arrow-down-s-line dropdown-arrow"></i>
                             </div>
-                        </div>
-                        <!--end col-md-6-->
-                    </div>
-                    <!--end row-->
-                </div>
-                <!--end ts-content-wrapper-->
-            </main>
-            <!--end #main-content-->
 
-            <!--FOOTER **********************************************************************************************-->
-            <footer id="footer">
-                <div class="clearfix py-4">
-                    <div class="float-none float-sm-left">
-                        <div class="ts-social-icons">
-                            <a href="https://www.linkedin.com/in/aeroer/" target="_blank" class="fab fa-linkedin"></a>
-                        </div>
-                    </div>
-                    <!--end social-icons-->
-                    <div class="float-none float-sm-right text-left text-sm-right ts-opacity__50">
-                        <small>© 2024 <a href="https://asaascom.com.my/" target="_blank" rel="noopener noreferrer">Asaascom Engineering</a></small>
-                    </div>
-                    <!--end text-left-->
-                </div>
-                <!--end clearfix-->
-            </footer>
-            <!--end #footer-->
-        </div>
-        <!--end container-->
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/who-we-are.html" class="dropdown-link">
+                                        Who We Are
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/what-we-do.html" class="dropdown-link">
+                                        What We Do
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/meet-out-team.html" class="dropdown-link">
+                                        Meet Our Team
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-        <!--BACKGROUND **********************************************************************************************-->
-        <div class="ts-background ts-shapes-canvas position-fixed ts-separate-bg-element" data-bg-color="#00265f">
-            <div class="ts-background-image ts-animate ts-scale" data-bg-image="assets/img/bg/14.png"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/13.png"></div>
-            <div class="ts-background-image ts-animate ts-scale" data-bg-image="assets/img/bg/12.png" data-bg-opacity=".3"></div>
-            <div class="ts-background-image ts-animate ts-scale" data-bg-image="assets/img/bg/11.png"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/10.png"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/9.png" data-bg-opacity=".8"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/8.png" data-bg-opacity=".8"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/7.png"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/6.png" data-bg-opacity=".8"></div>
-            <div class="ts-background-image ts-animate" data-bg-image="assets/img/bg/5.png" data-bg-opacity=".8"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/4.png"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/3.png" data-bg-opacity=".8"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/2.png"></div>
-            <div class="ts-background-image ts-animate ts-bounce" data-bg-image="assets/img/bg/1.png" data-bg-opacity=".8"></div>
+                        <!--Dropdown-->
+                        <li class="dropdown-item">
+                            <div class="nav-link">
+                               Services <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                            </div>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/ftth.html" class="dropdown-link">
+                                        
+                                        FTTH (Fiber To The Home) Network Engineering
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/inbuilding.html" class="dropdown-link">
+                                        
+                                        Inbuilding Wireless Design, Installation, Maintanence
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/fiber-repair.html" class="dropdown-link">
+                                        
+                                        Fiber Optic Repair and Maintainence
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/transmission.html" class="dropdown-link">
+                                     
+                                        Transmission Network Engineering
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/radio-access.html" class="dropdown-link">
+                                       
+                                        Radio Access Network Engineering
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/smart-home.html" class="dropdown-link">
+                                       
+                                        Smart Home Solution and Installation
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/cloud-acs.html" class="dropdown-link">
+                                      
+                                        Cloud - ACS Solution
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/contact-us.html" class="nav-link button">Contact Us</a></li>
+
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-heading">
+                Championing <br><span>Telecom Infrastructure</span>
+              <p class="hero-description">
+                Pioneering telecommunications engineering solutions with precision, innovation, and 
+                unparalleled expertise across Malaysia
+              </p>
+      
+              <div class="hero-btns">
+                <button class="btn hero-view-btn">
+                  View Our Projects <i class="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
         </div>
-        <!--end ts-background-->
+    </section>
+
+    <div class="nav-container">
+    <div class="progress-bar" id="progressBar"></div>
+    <nav>
+        <ul class="nav-tabs">
+        <li><button class="nav-tab active" data-section="our-services">Our Services</button></li>
+        <li><button class="nav-tab" data-section="about-tec">Who We Are</button></li>
+        </ul>
+    </nav>
     </div>
-    <!--end ts-page-wrapper-->
 
+   <!-- Services section -->
+    <section class="services-section" id="our-services">
+    <div class="services-header">
+        <h2 class="services-title">Our Network solutions</span></h2>
+        <p class="services-description">
+            Discover our expert network solutions designed for optimal performance and reliability. Our services ensure your home or business stays connected with cutting-edge technology and precision engineering.
+        </p>
+    </div>
+    <div class="services-container">
+        <nav class="services-navigation">
+            <h2>Our Services</h2>
+            <a href="#ftth" class="service-nav-item active" data-service="ftth">
+                FTTH Network Engineering
+            </a>
+            <a href="#wireless" class="service-nav-item" data-service="wireless">
+                In-building Wireless Design
+            </a>
+            <a href="#fiber" class="service-nav-item" data-service="fiber">
+                Fiber Optic Repair
+            </a>
+            <a href="#transmission" class="service-nav-item" data-service="transmission">
+                Transmission Network Engineering
+            </a>
+            <a href="#radio" class="service-nav-item" data-service="radio">
+                Radio Access Network Engineering
+            </a>
+            <a href="#smarthome" class="service-nav-item" data-service="smarthome">
+                Smart Home Solutions
+            </a>
+            <a href="#cloudacs" class="service-nav-item" data-service="cloudacs">
+                Cloud ACS Solution
+            </a>
+        </nav>
 
-    <!--*************************************************************************************************************-->
-    <!--************ JS SCRIPTS *************************************************************************************-->
-    <!--*************************************************************************************************************-->
+        <div class="services-content">
+            <article id="ftth" class="service-panel active">
+                <h2 class="service-panel-title">FTTH Network Engineering</h2>
+                <p class="service-panel-description">
+                    Our FTTH solutions ensure seamless and reliable high-speed internet connectivity, enabling smart homes and businesses to thrive.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">End to End Network Design</div>
+                    <div class="service-feature-item">FTTH Passive Component Supply, Installation and Testing</div>
+                    <div class="service-feature-item">Local Council Approval Submission , <br>Underground Detection Mapping and Traffic Plan Management Preparation</div>
+                </div>
+            </article>
 
-	<script src="assets/js/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/jquery.countdown.min.js"></script>
-	<script src="assets/js/jquery.validate.min.js"></script>
-	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
+            <article id="wireless" class="service-panel">
+                <h2 class="service-panel-title">In-building Wireless Design</h2>
+                <p class="service-panel-description">
+                    We design and maintain wireless network infrastructure, ensuring optimal performance in all types of buildings.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">RF Planning and End to end Network Inbuilding</div>
+                    <div class="service-feature-item">Supply , Installation and Testing of Inbuilding System</div>
+                    <div class="service-feature-item">Log Analysis and Optimization of Inbuilding System</div>
+                </div>
+            </article>
 
-    <script src="assets/js/custom.js"></script>
+            <article id="fiber" class="service-panel">
+                <h2 class="service-panel-title">Fiber Optic Repair</h2>
+                <p class="service-panel-description">
+                    Expert fiber optic repair and maintenance services for uninterrupted network performance and fast troubleshooting.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">Rapid Diagnostic Services</div>
+                    <div class="service-feature-item">Fiber Optic Corrective Maintenance and Rectification</div>
+                </div>
+            </article>
 
+            <article id="transmission" class="service-panel">
+                <h2 class="service-panel-title">Transmission Network Engineering</h2>
+                <p class="service-panel-description">
+                    Comprehensive transmission network design, deployment, and management for enterprise-scale connectivity.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">Campus Network Design</div>
+                    <div class="service-feature-item">Network Solution Consultancy</div>
+                    <div class="service-feature-item">Supply, Installation, Testing, and Commissioning of Wired and Wireless Transmission </div>
+                </div>
+            </article>
+
+            <article id="radio" class="service-panel">
+                <h2 class="service-panel-title">Radio Access Network Engineering</h2>
+                <p class="service-panel-description">
+                    We specialize in deploying and optimizing radio access networks (RAN) for wireless communication services.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">RAN Installation , Testing and Commissioning</div>
+                    <div class="service-feature-item">RAN Desing and Site Survey</div>
+                    <div class="service-feature-item">Drive Test Analysis and Optimiziation</div>
+                </div>
+            </article>
+
+            <article id="smarthome" class="service-panel">
+                <h2 class="service-panel-title">Smart Home Solutions</h2>
+                <p class="service-panel-description">
+                    Advanced smart home solutions, including automation, security systems, and seamless device integration.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">Smart Home Design, Installation and Testing</div>
+                    <div class="service-feature-item">Smart Home Solution Consultancy</div>
+                    <div class="service-feature-item">IoT Device Intergration</div>
+                </div>
+            </article>
+            <article id="cloudacs" class="service-panel">
+                <h2 class="service-panel-title">Cloud ACS Solution</h2>
+                <p class="service-panel-description">
+                    Streamline broadband management with our Cloud ACS Solution, offering seamless integration and efficient managed services.
+                </p>
+                <div class="service-features">
+                    <div class="service-feature-item">Cloud ACS Intergration</div>
+                    <div class="service-feature-item">Broadband Managed Services</div>
+                </div>
+            </article>
+        </div>
+    </div>
+    </section>
+
+    <section class="values-section" id="about-tec">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <h2 class="main-tagline">Unleashing Potential, Delivering Excellence</h2>
+            
+            <p class="introduction">
+                At TEC Telecom, we stand at the forefront of technology advancement. 
+                With each project, we strive to embody excellence in service and an unwavering 
+                commitment to quality. Our dedication shapes the future of connectivity, crafting 
+                network solutions that are not just functional but transformative.
+            </p>
+        
+            <div class="values-container">
+                <div class="value-card">
+                <h2 class="value-title">
+                    <span class="highlight-letter">T</span>echnology Advancement
+                </h2>
+                <p class="value-description">
+                    Pioneering innovations that set new standards.
+                </p>
+                </div>
+        
+                <div class="value-card">
+                <h2 class="value-title">
+                    <span class="highlight-letter">E</span>xcellence in Service
+                </h2>
+                <p class="value-description">
+                    Tailored solutions with impeccable execution.
+                </p>
+                </div>
+        
+                <div class="value-card">
+                <h2 class="value-title">
+                    <span class="highlight-letter">C</span>ommitment to Quality
+                </h2>
+                <p class="value-description">
+                    Meticulous attention to detail that ensures reliability.
+                </p>
+                </div>
+            </div>
+        
+            <div class="text-left">
+                <a href="/about" class="cta-button">
+                Learn More About Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--CTA Section-->
+    <section class="cta" id="contact-us">
+        <div class="cta-container">
+            <div class="columns">
+                <div class="text">
+                    <p class="heading">Bridge Connectivity Gaps.</p>
+                    <p class="sub-heading">Deploy cutting-edge infrastructure to connect and scale efficiently.</p>
+                </div>
+                <div class="button-container">
+                    <button class="button-cta"><a href="../Contact Us/index.html">Contact Us</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="alt-footer">
+        <div class="alt-footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../public/logo-tec-telecom-2-1@2x.png" alt="TEC Telecom Logo" class="alt-footer-logo">
+                    <p class="footer-brand-description">
+                        <strong>Empowering connectivity through innovative telecommunications solutions</strong>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tectelecom_malaysia/" aria-label="Instagram" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@tectelecom_malaysia?is_from_webapp=1&sender_device=pc" aria-label="TikTok" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>                    
+                </div>
+    
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3 class="column-title">Quick Links</h3>
+                        <ul class="footer-list">
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column">
+                        <h3 class="column-title">Our Services</h3>
+                        <ul class="footer-list">
+                            <li>
+                                <a href="/ftth.html" >
+                                    FTTH Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/inbuilding.html" >
+                                    
+                                    Inbuilding Wireless Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/fiber-repair.html" >
+                                    
+                                    Fiber Optic Repair and Maintainence
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/transmission.html" >                                 
+                                    Transmission Network Engineering
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/radio-access.html" >
+                                    Radio Access Network Engineering
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/smart-home.html" >
+                                    Smart Home Solution and Installation
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/cloud-acs.html">
+                                    Cloud ACS Solution
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column contact-column">
+                        <h3 class="column-title">Contact Information</h3>
+                        <div class="contact-details">
+                            <p><strong>Phone:</strong>03-80809515</p>
+                            <p><strong>Email:</strong>workorder@telecom.com.my</p>
+                            <p><strong>Address:</strong> 
+                                <br> No. 169, Jalan Lestari Perdana 7/2, 
+                                <br> Lestari Perdana,
+                                <br> 43300 Seri Kembangan, Selangor
+                            </p>
+                            <p><strong>Hours:</strong>
+                                <br> Mon-Fri: 09:00 AM - 06:00 PM
+                            </p>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2024 TEC Telecom. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

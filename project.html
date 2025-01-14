@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project</title>
+    <link rel="icon" href="../public/tec-telecom-6-1@2x.png" type="image/png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/project.css">
+    <link rel="stylesheet" href="./assets/css/navigation-menu.css">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!--Lucide CDN links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.iife.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
+    </script>
+
+    <!--Font Awesome CSS -->
+    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
+
+    <!-- Scripts-->
+    <script src="./assets/js/project.js"></script>     
+    <script src="/assets/js/navigation-menu.js" defer></script>
+    <script src="/assets/js/performance.js"></script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-data">
+                <a href="#" class="nav-logo">
+                    <img class="logo" src="../public/tec-telecom-6-1@2x.png" height="35px" width="auto" alt="TEC Telecom Logo"  fetchpriority="high">
+                </a>
+
+                <div class="nav-toggle" id="nav--toggle">
+                    <i class="ri-menu-line nav-burger"></i>
+                    <i class="ri-close-line nav-close"></i>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="nav--menu">
+                    <ul class="nav-list">
+                        <li><a href="/index.html" class="nav-link">Home</a></li>
+
+                        <li class="dropdown-item">
+                            <div class="nav-link">
+                                About Us <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                            </div>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/who-we-are.html" class="dropdown-link">
+                                        Who We Are
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/what-we-do.html" class="dropdown-link">
+                                        What We Do
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/meet-out-team.html" class="dropdown-link">
+                                        Meet Our Team
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--Dropdown-->
+                        <li class="dropdown-item">
+                            <div class="nav-link">
+                                Services <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                            </div>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/ftth.html" class="dropdown-link">
+                                        
+                                        FTTH (Fiber To The Home) Network Engineering
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/inbuilding.html" class="dropdown-link">
+                                        
+                                        Inbuilding Wireless Design, Installation, Maintanence
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/fiber-repair.html" class="dropdown-link">
+                                        
+                                        Fiber Optic Repair and Maintainence
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/transmission.html" class="dropdown-link">
+                                        
+                                        Transmission Network Engineering
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/radio-access.html" class="dropdown-link">
+                                        
+                                        Radio Access Network Engineering
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/smart-home.html" class="dropdown-link">
+                                        
+                                        Smart Home Solution and Installation
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/cloud-acs.html" class="dropdown-link">
+                                        
+                                        Cloud - ACS Solution
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/contact-us.html" class="nav-link button">Contact Us</a></li>
+
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section-->
+    <section class="service-hero">
+        <div class="service-hero__container">
+            <div class="service-hero__content">
+                <div class="service-hero__breadcrumb">
+                    <a href="../Home/index.html">Home</a> / <a href="../Project/index.html">Projects</a>
+                </div>
+                <h1 class="service-hero__heading">
+                    Our Projects
+                </h1>
+                <h3 class="service-hero__subheading">
+                    Transforming Ideas into Successful Solutions
+                </h3>
+                <p class="service-hero__description">
+                    Explore our portfolio of completed projects that showcase our expertise and commitment to delivering top-notch solutions. From cutting-edge network installations to advanced smart home systems, each project reflects our dedication to quality and customer satisfaction
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main class="projects-section">
+        <!-- Category Filter Tabs -->
+        <div class="filter-container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-filter="all">All Projects</button>
+                <button class="category-tab" data-filter="fiber">FTTH</button>
+                <button class="category-tab" data-filter="wireless">Inbuilding Wireless</button>
+                <button class="category-tab" data-filter="infrastructur">Transmission Network Engineering</button>
+                <button class="category-tab" data-filter="consulting">Radio Access Network Engineering</button>
+            </div>
+        </div>
+
+        <!-- Fiber Solutions Section -->
+        <section class="service-section" data-category="fiber">
+            <h2 class="service-title">FTTH</h2>
+            <div class="card-container">
+                <article class="card" tabindex="0">
+                    <div class="card-image">
+                        <img src="../public/Illustration 2.jpeg" 
+                             alt="FTTH Network Implementation"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag service card-tag-static" role="tag">Network Infrastructure</span>
+                        <h3 class="card-title">FTTH Network Deployment</h3>
+                        <a href="#" class="card-cta">
+                            View Project Details
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-hover-content">
+                        <div class="card-tags" role="list">
+                            <span class="card-tag operator" role="listitem">Operator Name</span>
+                            <span class="card-tag service" role="listitem">Network Infrastructure</span>
+                            <span class="card-tag duration" role="listitem">12 months</span>
+                        </div>
+                        <h3 class="card-title">FTTH Network Deployment</h3>
+                        <p class="card-description">
+                            Citywide fiber-to-the-home implementation serving 50,000+ households.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-image">
+                        <img src="../public/Illustration 2.jpeg" 
+                             alt="FTTH Network Implementation"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag service card-tag-static" role="tag">Network Infrastructure</span>
+                        <h3 class="card-title">FTTH Network Deployment</h3>
+                        <a href="#" class="card-cta">
+                            View Project Details
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-hover-content">
+                        <div class="card-tags" role="list">
+                            <span class="card-tag operator" role="listitem">Operator Name</span>
+                            <span class="card-tag service" role="listitem">Network Infrastructure</span>
+                            <span class="card-tag duration" role="listitem">12 months</span>
+                        </div>
+                        <h3 class="card-title">FTTH Network Deployment</h3>
+                        <p class="card-description">
+                            Citywide fiber-to-the-home implementation serving 50,000+ households.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card" tabindex="0">
+                    <div class="card-image">
+                        <img src="../public/Illustration 2.jpeg" 
+                             alt="FTTH Network Implementation"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag service card-tag-static" role="tag">Network Infrastructure</span>
+                        <h3 class="card-title">FTTH Network Deployment</h3>
+                        <a href="#" class="card-cta">
+                            View Project Details
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-arrow">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-hover-content">
+                        <div class="card-tags" role="list">
+                            <span class="card-tag operator" role="listitem">Operator Name</span>
+                            <span class="card-tag service" role="listitem">Network Infrastructure</span>
+                            <span class="card-tag duration" role="listitem">12 months</span>
+                        </div>
+                        <h3 class="card-title">FTTH Network Deployment</h3>
+                        <p class="card-description">
+                            Citywide fiber-to-the-home implementation serving 50,000+ households.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+    
+     <!-- Footer -->
+     <footer class="alt-footer">
+        <div class="alt-footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../public/logo-tec-telecom-2-1@2x.png" alt="TEC Telecom Logo" class="alt-footer-logo">
+                    <p class="footer-brand-description">
+                        <strong>Empowering connectivity through innovative telecommunications solutions</strong>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tectelecom_malaysia/" aria-label="Instagram" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@tectelecom_malaysia?is_from_webapp=1&sender_device=pc" aria-label="TikTok" class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>                    
+                </div>
+    
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3 class="column-title">Quick Links</h3>
+                        <ul class="footer-list">
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column">
+                        <h3 class="column-title">Our Services</h3>
+                        <ul class="footer-list">
+                            <li>
+                                <a href="/ftth.html" >
+                                    FTTH Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/inbuilding.html" >
+                                    
+                                    Inbuilding Wireless Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/fiber-repair.html" >
+                                    
+                                    Fiber Optic Repair and Maintainence
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/transmission.html" >                                 
+                                    Transmission Network Engineering
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/radio-access.html" >
+                                    Radio Access Network Engineering
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/smart-home.html" >
+                                    Smart Home Solution and Installation
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/cloud-acs.html">
+                                    Cloud ACS Solution
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column contact-column">
+                        <h3 class="column-title">Contact Information</h3>
+                        <div class="contact-details">
+                            <p><strong>Phone:</strong>03-80809515</p>
+                            <p><strong>Email:</strong>workorder@telecom.com.my</p>
+                            <p><strong>Address:</strong> 
+                                <br> No. 169, Jalan Lestari Perdana 7/2, 
+                                <br> Lestari Perdana,
+                                <br> 43300 Seri Kembangan, Selangor
+                            </p>
+                            <p><strong>Hours:</strong>
+                                <br> Mon-Fri: 09:00 AM - 06:00 PM
+                            </p>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2024 TEC Telecom. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
