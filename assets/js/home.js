@@ -35,6 +35,7 @@ serviceNavItems.forEach((item) => {
     cycleInterval = setInterval(cycleServices, 5000);
   });
 });
+
 class ProjectCarousel {
   constructor() {
     this.track = document.querySelector(".carousel-track");
@@ -213,6 +214,7 @@ class ProjectCarousel {
 document.addEventListener("DOMContentLoaded", () => {
   new ProjectCarousel();
 });
+
 // Configuration object for easy maintenance
 const CONFIG = {
   selectors: {
@@ -410,3 +412,52 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js").catch(console.error);
   });
 }
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the hero button
+  const heroButton = document.querySelector('.hero-view-btn');
+  
+  // Function to get header offset based on screen size
+  const getHeaderOffset = () => {
+      // Get the current viewport width
+      const viewportWidth = window.innerWidth;
+      
+      // Define breakpoints and corresponding offsets
+      if (viewportWidth < 768) {
+          return 70; // Mobile offset (adjust based on your mobile header height)
+      } else if (viewportWidth < 1024) {
+          return 85; // Tablet offset (adjust based on your tablet header height)
+      } else {
+          return 100; // Desktop offset (adjust based on your desktop header height)
+      }
+  };
+  
+  // Add click event listener to the button
+  heroButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Get the target section from the data-section attribute
+      const targetSectionId = heroButton.dataset.section;
+      const targetSection = document.getElementById(targetSectionId);
+      
+      // Get the current scroll position with responsive offset
+      const headerOffset = getHeaderOffset();
+      const elementPosition = targetSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      // Scroll to the target section with offset
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+      });
+  });
+  
+  // Update offset on resize
+  window.addEventListener('resize', () => {
+      // If actively scrolling, update the scroll position
+      if (document.querySelector('.hero-view-btn:active')) {
+          heroButton.click();
+      }
+  });
+});

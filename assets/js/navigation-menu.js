@@ -3,114 +3,231 @@ document.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.getElementById("nav--menu");
   const dropdownItems = document.querySelectorAll(".dropdown-item");
 
+  // Accessibility setup
+  navToggle.setAttribute("aria-label", "Toggle navigation menu");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("role", "button");
+  navMenu.setAttribute("aria-label", "Main navigation");
+
+  // Set up ARIA labels and roles for dropdowns
+  dropdownItems.forEach((item, index) => {
+    const trigger = item.querySelector(".nav-link");
+    const menu = item.querySelector(".dropdown-menu");
+    const menuId = `dropdown-menu-${index}`;
+    
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.setAttribute("aria-controls", menuId);
+    trigger.setAttribute("role", "button");
+    trigger.setAttribute("aria-haspopup", "true");
+    
+    menu.setAttribute("id", menuId);
+    menu.setAttribute("role", "menu");
+    menu.setAttribute("aria-hidden", "true");
+    
+    // Set roles for dropdown items
+    menu.querySelectorAll(".dropdown-link").forEach(link => {
+      link.setAttribute("role", "menuitem");
+      link.setAttribute("tabindex", "-1");
+    });
+  });
+
   // Determine if current view is mobile
   const isMobileView = () => window.innerWidth < 1119;
 
-  // Mobile Menu Toggle
+  // Enhanced Mobile Menu Toggle with accessibility
   const toggleMobileMenu = () => {
-    navMenu.classList.toggle("show-menu");
+    const isExpanded = navMenu.classList.toggle("show-menu");
     navToggle.classList.toggle("show-icon");
+    navToggle.setAttribute("aria-expanded", isExpanded);
+    navMenu.setAttribute("aria-hidden", !isExpanded);
 
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = navMenu.classList.contains("show-menu")
-      ? "hidden"
-      : "auto";
+    // Manage focus trap in mobile menu
+    if (isExpanded) {
+      document.body.style.overflow = "hidden";
+      // Focus first interactive element
+      const firstFocusable = navMenu.querySelector("a, button, [tabindex='0']");
+      if (firstFocusable) firstFocusable.focus();
+    } else {
+      document.body.style.overflow = "auto";
+      navToggle.focus(); // Return focus to toggle button
+    }
   };
 
-  // Mobile Dropdown Toggle
+  // Enhanced Mobile Dropdown Toggle with accessibility
   const toggleMobileDropdown = (item) => {
-    // Close other open dropdowns
+    const trigger = item.querySelector(".nav-link");
+    const menu = item.querySelector(".dropdown-menu");
+    const isExpanded = item.classList.toggle("active");
+
+    // Update ARIA states
+    trigger.setAttribute("aria-expanded", isExpanded);
+    menu.setAttribute("aria-hidden", !isExpanded);
+
+    // Close other dropdowns
     dropdownItems.forEach((otherItem) => {
-      if (otherItem !== item) {
+      if (otherItem !== item && otherItem.classList.contains("active")) {
+        const otherTrigger = otherItem.querySelector(".nav-link");
+        const otherMenu = otherItem.querySelector(".dropdown-menu");
         otherItem.classList.remove("active");
+        otherTrigger.setAttribute("aria-expanded", "false");
+        otherMenu.setAttribute("aria-hidden", "true");
       }
     });
-
-    // Toggle current dropdown
-    item.classList.toggle("active");
   };
 
-  // Desktop Dropdown Hover
+  // Enhanced Desktop Dropdown Hover with accessibility
   const setupDesktopDropdown = (item) => {
-    item.addEventListener("mouseenter", () => {
-      item.classList.add("active");
-    });
+    const trigger = item.querySelector(".nav-link");
+    const menu = item.querySelector(".dropdown-menu");
+    let hoverTimeout;
 
-    item.addEventListener("mouseleave", () => {
-      item.classList.remove("active");
+    const showDropdown = () => {
+      clearTimeout(hoverTimeout);
+      item.classList.add("active");
+      trigger.setAttribute("aria-expanded", "true");
+      menu.setAttribute("aria-hidden", "false");
+    };
+
+    const hideDropdown = () => {
+      hoverTimeout = setTimeout(() => {
+        item.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
+      }, 150);
+    };
+
+    // Mouse interactions
+    item.addEventListener("mouseenter", showDropdown);
+    item.addEventListener("mouseleave", hideDropdown);
+
+    // Touch interactions
+    item.addEventListener("touchstart", (e) => {
+      if (!item.classList.contains("active")) {
+        e.preventDefault();
+        dropdownItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove("active");
+          }
+        });
+        showDropdown();
+      }
     });
   };
 
-  // Mobile Dropdown Click Handler
-  const setupMobileDropdown = (item) => {
-    const dropdownLink = item.querySelector(".nav-link");
+  // Enhanced focus management
+  const setupFocusManagement = () => {
+    const focusableElements = navMenu.querySelectorAll(
+      'a[href], button, [tabindex="0"]'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
 
-    dropdownLink.addEventListener("click", (e) => {
-      // Prevent default only if it's a dropdown
-      if (item.querySelector(".dropdown-menu")) {
+    // Trap focus within mobile menu when open
+    lastFocusable.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" && !e.shiftKey && navMenu.classList.contains("show-menu")) {
         e.preventDefault();
-        toggleMobileDropdown(item);
+        firstFocusable.focus();
       }
+    });
+
+    firstFocusable.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" && e.shiftKey && navMenu.classList.contains("show-menu")) {
+        e.preventDefault();
+        lastFocusable.focus();
+      }
+    });
+  };
+
+  // Enhanced keyboard navigation
+  const setupKeyboardNavigation = () => {
+    dropdownItems.forEach((item) => {
+      const trigger = item.querySelector(".nav-link");
+      const menu = item.querySelector(".dropdown-menu");
+      const menuItems = menu.querySelectorAll(".dropdown-link");
+
+      trigger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggleMobileDropdown(item);
+        } else if (e.key === "ArrowDown" && item.classList.contains("active")) {
+          e.preventDefault();
+          menuItems[0].focus();
+        }
+      });
+
+      menuItems.forEach((menuItem, index) => {
+        menuItem.addEventListener("keydown", (e) => {
+          switch (e.key) {
+            case "ArrowDown":
+              e.preventDefault();
+              if (index < menuItems.length - 1) {
+                menuItems[index + 1].focus();
+              }
+              break;
+            case "ArrowUp":
+              e.preventDefault();
+              if (index > 0) {
+                menuItems[index - 1].focus();
+              } else {
+                trigger.focus();
+              }
+              break;
+            case "Escape":
+              e.preventDefault();
+              trigger.focus();
+              toggleMobileDropdown(item);
+              break;
+          }
+        });
+      });
     });
   };
 
   // Navigation Toggle Setup
   navToggle.addEventListener("click", toggleMobileMenu);
 
-  // Responsive Dropdown Setup
-  const setupDropdowns = () => {
-    dropdownItems.forEach((item) => {
-      // Remove existing listeners to prevent duplicates
-      item.onmouseenter = null;
-      item.onmouseleave = null;
+  // Initial setup
+  setupFocusManagement();
+  setupKeyboardNavigation();
 
-      if (isMobileView()) {
-        // Mobile setup
-        setupMobileDropdown(item);
+  // Responsive behavior setup
+  const setupResponsiveBehavior = () => {
+    const isMobile = isMobileView();
+    
+    dropdownItems.forEach((item) => {
+      const trigger = item.querySelector(".nav-link");
+      if (isMobile) {
+        trigger.addEventListener("click", (e) => {
+          if (item.querySelector(".dropdown-menu")) {
+            e.preventDefault();
+            toggleMobileDropdown(item);
+          }
+        });
       } else {
-        // Desktop setup
         setupDesktopDropdown(item);
       }
     });
   };
 
+  // Initial setup and resize handling
+  setupResponsiveBehavior();
+  window.addEventListener("resize", setupResponsiveBehavior);
+
   // Close menu when clicking outside
   document.addEventListener("click", (e) => {
-    // Check if click is outside nav menu and nav toggle
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-      // Close mobile menu
       navMenu.classList.remove("show-menu");
       navToggle.classList.remove("show-icon");
-
-      // Reset body scroll
-      document.body.style.overflow = "auto";
-
-      // Close all dropdowns
-      dropdownItems.forEach((item) => {
-        item.classList.remove("active");
-      });
-    }
-  });
-
-  // Keyboard Accessibility for Dropdowns
-  document.addEventListener("keydown", (e) => {
-    // Close menu with Escape key
-    if (e.key === "Escape") {
-      navMenu.classList.remove("show-menu");
-      navToggle.classList.remove("show-icon");
+      navToggle.setAttribute("aria-expanded", "false");
       document.body.style.overflow = "auto";
 
       dropdownItems.forEach((item) => {
+        const trigger = item.querySelector(".nav-link");
+        const menu = item.querySelector(".dropdown-menu");
         item.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
       });
     }
-  });
-
-  // Initial setup
-  setupDropdowns();
-
-  // Reapply setup on window resize
-  window.addEventListener("resize", () => {
-    setupDropdowns();
   });
 });
