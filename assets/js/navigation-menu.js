@@ -75,7 +75,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Enhanced Desktop Dropdown Hover with accessibility
+  // Enhanced touch handling for dropdowns
+  const handleDropdownTouch = (item, e) => {
+    e.stopPropagation();
+    const trigger = item.querySelector(".nav-link");
+    const menu = item.querySelector(".dropdown-menu");
+    const isActive = item.classList.contains("active");
+
+    // Close other dropdowns first
+    dropdownItems.forEach((otherItem) => {
+      if (otherItem !== item && otherItem.classList.contains("active")) {
+        otherItem.classList.remove("active");
+        const otherTrigger = otherItem.querySelector(".nav-link");
+        const otherMenu = otherItem.querySelector(".dropdown-menu");
+        otherTrigger.setAttribute("aria-expanded", "false");
+        otherMenu.setAttribute("aria-hidden", "true");
+      }
+    });
+
+    // Toggle current dropdown
+    item.classList.toggle("active");
+    trigger.setAttribute("aria-expanded", !isActive);
+    menu.setAttribute("aria-hidden", isActive);
+
+    // If this is a link with href and dropdown is already open, allow navigation
+    const link = trigger.querySelector("a");
+    if (link && link.href && isActive) {
+      window.location.href = link.href;
+    }
+  };
+
+  // Enhanced Desktop Dropdown Hover
   const setupDesktopDropdown = (item) => {
     const trigger = item.querySelector(".nav-link");
     const menu = item.querySelector(".dropdown-menu");
@@ -96,22 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 150);
     };
 
-    // Mouse interactions
     item.addEventListener("mouseenter", showDropdown);
     item.addEventListener("mouseleave", hideDropdown);
-
-    // Touch interactions
-    item.addEventListener("touchstart", (e) => {
-      if (!item.classList.contains("active")) {
-        e.preventDefault();
-        dropdownItems.forEach((otherItem) => {
-          if (otherItem !== item) {
-            otherItem.classList.remove("active");
-          }
-        });
-        showDropdown();
-      }
-    });
   };
 
   // Enhanced focus management
@@ -183,37 +199,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Navigation Toggle Setup
-  navToggle.addEventListener("click", toggleMobileMenu);
-
-  // Initial setup
-  setupFocusManagement();
-  setupKeyboardNavigation();
-
   // Responsive behavior setup
   const setupResponsiveBehavior = () => {
     const isMobile = isMobileView();
     
     dropdownItems.forEach((item) => {
       const trigger = item.querySelector(".nav-link");
+      
+      // Remove existing listeners
+      trigger.removeEventListener("touchstart", handleDropdownTouch);
+      item.removeEventListener("mouseenter", null);
+      item.removeEventListener("mouseleave", null);
+
       if (isMobile) {
-        trigger.addEventListener("click", (e) => {
-          if (item.querySelector(".dropdown-menu")) {
-            e.preventDefault();
-            toggleMobileDropdown(item);
-          }
-        });
+        // Mobile behavior
+        trigger.addEventListener("touchstart", (e) => handleDropdownTouch(item, e));
       } else {
+        // Desktop behavior
         setupDesktopDropdown(item);
       }
     });
   };
 
-  // Initial setup and resize handling
+  // Navigation Toggle Setup
+  navToggle.addEventListener("click", toggleMobileMenu);
+
+  // Initial setup
+  setupFocusManagement();
+  setupKeyboardNavigation();
   setupResponsiveBehavior();
+
+  // Update on resize
   window.addEventListener("resize", setupResponsiveBehavior);
 
-  // Close menu when clicking outside
+  // Close menu when clicking/touching outside
   document.addEventListener("click", (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
       navMenu.classList.remove("show-menu");
@@ -225,6 +244,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const trigger = item.querySelector(".nav-link");
         const menu = item.querySelector(".dropdown-menu");
         item.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
+      });
+    }
+  });
+
+  document.addEventListener("touchstart", (e) => {
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+      dropdownItems.forEach((item) => {
+        item.classList.remove("active");
+        const trigger = item.querySelector(".nav-link");
+        const menu = item.querySelector(".dropdown-menu");
         trigger.setAttribute("aria-expanded", "false");
         menu.setAttribute("aria-hidden", "true");
       });
