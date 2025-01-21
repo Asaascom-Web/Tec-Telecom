@@ -1037,6 +1037,10 @@ footer {
   opacity: 0.9;
 }
 
+.lead-text.what {
+  color: var(--color-white);
+}
+
 .capabilities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1154,7 +1158,6 @@ footer {
 }
 
 /* Services Section */
-/* Section transition */
 /* Section transition */
 .section-transition {
   height: 100px;
@@ -1670,19 +1673,15 @@ footer {
 
 /* Why Choose Us Section */
 /* Section transition */
-.section-transition {
-  height: 80px;
+.section-transition.qa {
+  height: 50px;
   background: linear-gradient(
-        45deg,
-        var(--color-accent-lighter) 25%,
-        transparent 25%
-      ) -50px 0,
-    linear-gradient(-45deg, var(--color-accent-lighter) 25%, transparent 25%) -50px
-      0;
-  background-size: 100px 100px;
-  background-color: var(--color-white);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
-  margin-bottom: -40px;
+    to bottom right,
+    var(--color-accent) 0%,
+    var(--color-background) 100%
+  );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  margin-bottom: -50px;
 }
 
 .why-choose-us {
@@ -1924,7 +1923,7 @@ footer {
 /* Quality Assurance Section */
 .section.quality-assurance{
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--color-background), var(--color-primary-light));
+  background-color: var(--color-accent-lighter);
 }
 
 .container {
@@ -1936,15 +1935,16 @@ footer {
 .section-header{
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--color-white);
+  color: var(--color-background);
 }
 
 .section-title.quality-assurance {
+  margin-top: 4rem;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
-  color: var(--color-white);
+  color: var(--color-background);
 }
 
 .underline {
@@ -1973,7 +1973,7 @@ footer {
 
 .lead {
   font-size: 1.2rem;
-  color: var(--color-white);
+  color: var(--color-hover);
   max-width: 800px;
   margin: 0 auto 3rem;
   text-align: center;
@@ -2020,7 +2020,7 @@ footer {
 }
 
 .pillar h3 {
-  color: var(--color-white);
+  color: var(--color-background);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
