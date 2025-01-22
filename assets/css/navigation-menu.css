@@ -207,7 +207,7 @@ img {
 }
 
 .dropdown-item.active .dropdown-menu {
-  max-height: 1000px;
+  max-height: 1000px; /* This should be larger than your actual content height */
 }
 
 .dropdown-item.active .dropdown-menu,
