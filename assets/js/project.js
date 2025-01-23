@@ -116,40 +116,131 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.category-tab');
-    const serviceSections = document.querySelectorAll('.service-section');
-
-    // Automatically activate "All Projects" category
-    const allProjectsButton = document.querySelector('.category-tab[data-filter="all"]');
-    allProjectsButton.classList.add('active');
-
-    // Show all sections by default
-    serviceSections.forEach(section => {
-        section.classList.add('active');
+    const sections = document.querySelectorAll('.service-section');
+    const navTracker = document.createElement('div');
+    navTracker.className = 'elegant-section-nav';
+    
+    // Create navigation items for each section
+    sections.forEach((section, index) => {
+      const navItem = document.createElement('div');
+      navItem.className = 'section-nav-item';
+      
+      // Create dot
+      const dot = document.createElement('button');
+      dot.className = 'section-nav-dot';
+      dot.setAttribute('aria-label', `Navigate to ${section.id} section`);
+      dot.dataset.section = section.id;
+      
+      // Create title
+      const title = document.createElement('span');
+      title.className = 'section-nav-title';
+      title.textContent = section.querySelector('.service-title').textContent;
+      
+      navItem.appendChild(dot);
+      navItem.appendChild(title);
+      
+      navItem.addEventListener('click', () => {
+        section.scrollIntoView({ behavior: 'smooth' });
+        updateActiveNavItem(index);
+      });
+      
+      navTracker.appendChild(navItem);
     });
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            const filter = button.getAttribute('data-filter');
-
-            // Show/hide sections based on filter
-            serviceSections.forEach(section => {
-                if (filter === 'all') {
-                    section.classList.add('active');
-                } else {
-                    if (section.getAttribute('data-category') === filter) {
-                        section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
-                    }
-                }
-            });
-        });
+    
+    // Function to update active nav item
+    function updateActiveNavItem(activeIndex = 0) {
+      const navItems = navTracker.querySelectorAll('.section-nav-item');
+      navItems.forEach(item => item.classList.remove('active'));
+      navItems[activeIndex]?.classList.add('active');
+    }
+    
+    // Add scroll event listener to dynamically update active section
+    window.addEventListener('scroll', () => {
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+          updateActiveNavItem(index);
+        }
+      });
     });
-});
+    
+    // Initial active state
+    updateActiveNavItem();
+    
+    // Append navigation tracker to body
+    document.body.appendChild(navTracker);
+  });
+  
+  // Accompanying CSS for styling
+  const style = document.createElement('style');
+  style.textContent = `
+  .elegant-section-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .section-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  
+  .section-nav-item:hover,
+  .section-nav-item.active {
+    opacity: 1;
+  }
+  
+  .section-nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-right: 1rem;
+  }
+  
+  .section-nav-item.active .section-nav-dot {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+  }
+  
+  .section-nav-title {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+
+  }
+  
+  .section-nav-item:hover .section-nav-title,
+  .section-nav-item.active .section-nav-title {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  @media (max-width: 768px) {
+    .elegant-section-nav {
+      display: none;
+    }
+  }
+  `;
+  document.head.appendChild(style);
 
 

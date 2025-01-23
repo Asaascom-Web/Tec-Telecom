@@ -3,332 +3,392 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Contact Us</title>
-    <link rel="icon" href="../public/tec-telecom-6-1@2x.png" type="image/png">
+    <link rel="icon" href="../public/tec-telecom-6-1@2x.png" type="image/png" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/contact-us.css">
-    <link rel="stylesheet" href="./assets/css/navigation-menu.css">
-    
+    <link rel="stylesheet" href="./assets/css/contact-us.css" />
+    <link rel="stylesheet" href="./assets/css/navigation-menu.css" />
+
     <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
     <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
     <!--Lucide CDN links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.iife.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            lucide.createIcons();
-        });
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+      });
     </script>
 
     <!--Font Awesome CSS -->
-    <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
-
+    <script
+      src="https://kit.fontawesome.com/a780dab40f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-
     <!-- Header -->
     <header class="header">
-        <nav class="nav container">
-            <div class="nav-data">
-                <a href="/index.html" class="nav-logo">
-                    <img class="logo" src="../public/tec-telecom-6-1@2x.png" height="35px" width="auto" alt="TEC Telecom Logo"  fetchpriority="high">
-                </a>
+      <nav class="nav container">
+        <div class="nav-data">
+          <a href="/index.html" class="nav-logo">
+            <img
+              class="logo"
+              src="../public/tec-telecom-6-1@2x.png"
+              height="35px"
+              width="auto"
+              alt="TEC Telecom Logo"
+              fetchpriority="high"
+            />
+          </a>
 
-                <div class="nav-toggle" id="nav--toggle">
-                    <i class="ri-menu-line nav-burger"></i>
-                    <i class="ri-close-line nav-close"></i>
+          <div class="nav-toggle" id="nav--toggle">
+            <i class="ri-menu-line nav-burger"></i>
+            <i class="ri-close-line nav-close"></i>
+          </div>
+
+          <!-- Navigation Menu -->
+          <div class="nav-menu" id="nav--menu">
+            <ul class="nav-list">
+              <li><a href="/index.html" class="nav-link">Home</a></li>
+
+              <li class="dropdown-item">
+                <div class="nav-link">
+                  About Us <i class="ri-arrow-down-s-line dropdown-arrow"></i>
                 </div>
 
-                <!-- Navigation Menu -->
-                <div class="nav-menu" id="nav--menu">
-                    <ul class="nav-list">
-                        <li><a href="/index.html" class="nav-link">Home</a></li>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/who-we-are.html" class="dropdown-link">
+                      Who We Are
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/what-we-do.html" class="dropdown-link">
+                      What We Do
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/meet-out-team.html" class="dropdown-link">
+                      Meet Our Team
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-                        <li class="dropdown-item">
-                            <div class="nav-link">
-                               About Us <i class="ri-arrow-down-s-line dropdown-arrow"></i>
-                            </div>
+              <!--Dropdown-->
+              <li class="dropdown-item">
+                <div class="nav-link">
+                  Services <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                </div>
 
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/who-we-are.html" class="dropdown-link">
-                                        Who We Are
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/what-we-do.html" class="dropdown-link">
-                                        What We Do
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/meet-out-team.html" class="dropdown-link">
-                                        Meet Our Team
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/ftth.html" class="dropdown-link">
+                      FTTH (Fiber To The Home) Network Engineering
+                    </a>
+                  </li>
 
-                        <!--Dropdown-->
-                        <li class="dropdown-item">
-                            <div class="nav-link">
-                               Services <i class="ri-arrow-down-s-line dropdown-arrow"></i>
-                            </div>
+                  <li>
+                    <a href="/inbuilding.html" class="dropdown-link">
+                      Inbuilding Wireless Design, Installation, Maintanence
+                    </a>
+                  </li>
 
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/ftth.html" class="dropdown-link">
-                                        
-                                        FTTH (Fiber To The Home) Network Engineering
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/inbuilding.html" class="dropdown-link">
-                                        
-                                        Inbuilding Wireless Design, Installation, Maintanence
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="/fiber-repair.html" class="dropdown-link">
-                                        
-                                        Fiber Optic Repair and Maintainence
-                                    </a>
-                                </li>
+                  <li>
+                    <a href="/fiber-repair.html" class="dropdown-link">
+                      Fiber Optic Repair and Maintainence
+                    </a>
+                  </li>
 
-                                <li>
-                                    <a href="/transmission.html" class="dropdown-link">
-                                     
-                                        Transmission Network Engineering
-                                    </a>
-                                </li>
+                  <li>
+                    <a href="/transmission.html" class="dropdown-link">
+                      Transmission Network Engineering
+                    </a>
+                  </li>
 
-                                <li>
-                                    <a href="/radio-access.html" class="dropdown-link">
-                                       
-                                        Radio Access Network Engineering
-                                    </a>
-                                </li>
+                  <li>
+                    <a href="/radio-access.html" class="dropdown-link">
+                      Radio Access Network Engineering
+                    </a>
+                  </li>
 
-                                <li>
-                                    <a href="/smart-home.html" class="dropdown-link">
-                                       
-                                        Smart Home Solution and Installation
-                                    </a>
-                                </li>
+                  <li>
+                    <a href="/smart-home.html" class="dropdown-link">
+                      Smart Home Solution and Installation
+                    </a>
+                  </li>
 
-                                <li>
-                                    <a href="/cloud-acs.html" class="dropdown-link">
-                                      
-                                        Cloud - ACS Solution
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                  <li>
+                    <a href="/cloud-acs.html" class="dropdown-link">
+                      Cloud - ACS Solution
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-                        <li><a href="/contact-us.html" class="nav-link button">Contact Us</a></li>
+              <li>
+                <a href="/project.html" class="nav-link button">Our Projects</a>
+              </li>
 
-                    </ul>
-                </div> 
-            </div>
-        </nav>
+              <li>
+                <a href="/contact-us.html" class="nav-link button"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <header class="hero-banner">
-        <h1>We're Here to Help. Reach Out Today!</h1>
-        <p>Get in touch with our expert team for seamless communication solutions</p>
+      <h1>We're Here to Help. Reach Out Today!</h1>
+      <p>
+        Get in touch with our expert team for seamless communication solutions
+      </p>
     </header>
 
     <main class="contact-container">
-        <article class="form">
-            <section class="contact-info">
-                <h2>Contact Information</h2>
-                <p class="text">
-                    We'd love to hear from you! Whether you have questions about our services, need support, or want to discuss a potential project, our team is here to help.
-                </p>
+      <article class="form">
+        <section class="contact-info">
+          <h2>Contact Information</h2>
+          <p class="text">
+            We'd love to hear from you! Whether you have questions about our
+            services, need support, or want to discuss a potential project, our
+            team is here to help.
+          </p>
 
-                <section class="info">
-                    <address class="information">
-                        <div class="icon">
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                        </div>
-                        <p>
-                            No. 169, Jalan Lestari Perdana 7/2,<br>
-                            Lestari Perdana,<br>
-                            43300 Seri Kembangan, Selangor
-                        </p>
-                    </address>
+          <section class="info">
+            <address class="information">
+              <div class="icon">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <p>
+                No. 169, Jalan Lestari Perdana 7/2,<br />
+                Lestari Perdana,<br />
+                43300 Seri Kembangan, Selangor
+              </p>
+            </address>
 
-                    <address class="information">
-                        <div class="icon">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </div>
-                        <a href="mailto:workorder@telecom.com.my">workorder@telecom.com.my</a>
-                    </address>
+            <address class="information">
+              <div class="icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </div>
+              <a href="mailto:workorder@telecom.com.my"
+                >workorder@telecom.com.my</a
+              >
+            </address>
 
-                    <address class="information">
-                        <div class="icon">
-                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                        </div>
-                        <a href="tel:0380809515">03-80809515</a>
-                    </address>
-                </section>
+            <address class="information">
+              <div class="icon">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              </div>
+              <a href="tel:0380809515">03-80809515</a>
+            </address>
+          </section>
 
-                <section class="social-media">
-                    <h2>Connect with us:</h2>
-                    <nav class="social-icons">
-                        <a href="#" aria-label="Follow us on Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" aria-label="Follow us on TikTok">
-                            <i class="fab fa-tiktok" aria-hidden="true"></i>
-                        </a>
-                    </nav>
-                </section>
-            </section>
+          <section class="social-media">
+            <h2>Connect with us:</h2>
+            <nav class="social-icons">
+              <a href="#" aria-label="Follow us on Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Follow us on TikTok">
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+              </a>
+            </nav>
+          </section>
+        </section>
 
-            <section class="contact-form">
-                <form action="https://formspree.io/f/mbllqdod" method="POST">
-                    <h2>Send us a Message</h2>
-                    
-                    <div class="input-container">
-                        <input type="text" id="name" name="name" class="input" placeholder=" " required />
-                        <label for="name">Name</label>
-                    </div>
+        <section class="contact-form">
+          <form action="https://formspree.io/f/mbllqdod" method="POST">
+            <h2>Send us a Message</h2>
 
-                    <div class="input-container">
-                        <input type="email" id="email" name="email" class="input" placeholder=" " required />
-                        <label for="email">Email</label>
-                    </div>
+            <div class="input-container">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="input"
+                placeholder=" "
+                required
+              />
+              <label for="name">Name</label>
+            </div>
 
-                    <div class="input-container">
-                        <input type="tel" id="phone" name="phone" class="input" placeholder=" " required />
-                        <label for="phone">Phone Number</label>
-                    </div>
+            <div class="input-container">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                placeholder=" "
+                required
+              />
+              <label for="email">Email</label>
+            </div>
 
-                    <div class="input-container">
-                        <textarea id="message" name="message" class="input" placeholder=" " required></textarea>
-                        <label for="message">Message</label>
-                    </div>
+            <div class="input-container">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="input"
+                placeholder=" "
+                required
+              />
+              <label for="phone">Phone Number</label>
+            </div>
 
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </section>
-        </article>
+            <div class="input-container">
+              <textarea
+                id="message"
+                name="message"
+                class="input"
+                placeholder=" "
+                required
+              ></textarea>
+              <label for="message">Message</label>
+            </div>
+
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+        </section>
+      </article>
     </main>
 
     <!-- Footer -->
     <footer class="alt-footer">
       <div class="alt-footer-container">
-          <div class="footer-grid">
-              <div class="footer-brand">
-                  <img src="../public/logo-tec-telecom-2-1@2x.png" alt="TEC Telecom Logo" class="alt-footer-logo">
-                  <p class="footer-brand-description">
-                      <strong>Empowering connectivity through innovative telecommunications solutions</strong>
-                  </p>
-                  <div class="social-links">
-                      <a href="https://www.instagram.com/tectelecom_malaysia/" aria-label="Instagram" class="social-icon">
-                          <i class="fab fa-instagram"></i>
-                      </a>
-                      <a href="https://www.tiktok.com/@tectelecom_malaysia?is_from_webapp=1&sender_device=pc" aria-label="TikTok" class="social-icon">
-                          <i class="fab fa-tiktok"></i>
-                      </a>
-                  </div>                    
-              </div>
-  
-              <div class="footer-columns">
-                  <div class="footer-column">
-                      <h3 class="column-title">Quick Links</h3>
-                      <ul class="footer-list">
-                          <li><a href="/index.html">Home</a></li>
-                          <li><a href="/contact-us.html">Contact Us</a></li>
-                      </ul>
-                  </div>
-  
-                  <div class="footer-column">
-                      <h3 class="column-title">Our Services</h3>
-                      <ul class="footer-list">
-                          <li>
-                              <a href="/ftth.html" >
-                                  FTTH Solutions
-                              </a>
-                          </li>
-                          <li>
-                              <a href="/inbuilding.html" >
-                                  
-                                  Inbuilding Wireless Solutions
-                              </a>
-                          </li>
-                          <li>
-                              <a href="/fiber-repair.html" >
-                                  
-                                  Fiber Optic Repair and Maintainence
-                              </a>
-                          </li>
-
-                          <li>
-                              <a href="/transmission.html" >                                 
-                                  Transmission Network Engineering
-                              </a>
-                          </li>
-
-                          <li>
-                              <a href="/radio-access.html" >
-                                  Radio Access Network Engineering
-                              </a>
-                          </li>
-
-                          <li>
-                              <a href="/smart-home.html" >
-                                  Smart Home Solution and Installation
-                              </a>
-                          </li>
-
-                          <li>
-                              <a href="/cloud-acs.html">
-                                  Cloud ACS Solution
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-  
-                  <div class="footer-column contact-column">
-                      <h3 class="column-title">Contact Information</h3>
-                      <div class="contact-details">
-                          <p><strong>Phone:</strong>03-80809515</p>
-                          <p><strong>Email:</strong>workorder@telecom.com.my</p>
-                          <p><strong>Address:</strong> 
-                              <br> No. 169, Jalan Lestari Perdana 7/2, 
-                              <br> Lestari Perdana,
-                              <br> 43300 Seri Kembangan, Selangor
-                          </p>
-                          <p><strong>Hours:</strong>
-                              <br> Mon-Fri: 09:00 AM - 06:00 PM
-                          </p>
-                      </div>
-                  </div>                    
-              </div>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img
+              src="../public/logo-tec-telecom-2-1@2x.png"
+              alt="TEC Telecom Logo"
+              class="alt-footer-logo"
+            />
+            <p class="footer-brand-description">
+              <strong
+                >Empowering connectivity through innovative telecommunications
+                solutions</strong
+              >
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/tectelecom_malaysia/"
+                aria-label="Instagram"
+                class="social-icon"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@tectelecom_malaysia?is_from_webapp=1&sender_device=pc"
+                aria-label="TikTok"
+                class="social-icon"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
           </div>
-  
-          <div class="footer-bottom">
-              <p>&copy; 2024 TEC Telecom. All Rights Reserved.</p>
+
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h3 class="column-title">Quick Links</h3>
+              <ul class="footer-list">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/project.html">Our Projects</a></li>
+                <li><a href="/who-we-are.html">Who We Are</a></li>
+                <li><a href="/what-we-do.html">What We Do</a></li>
+                <li><a href="/meet-out-team.html">Meet Our Team</a></li>
+                <li><a href="/contact-us.html">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3 class="column-title">Our Services</h3>
+              <ul class="footer-list">
+                <li>
+                  <a href="/ftth.html"> FTTH Solutions </a>
+                </li>
+                <li>
+                  <a href="/inbuilding.html"> Inbuilding Wireless Solutions </a>
+                </li>
+                <li>
+                  <a href="/fiber-repair.html">
+                    Fiber Optic Repair and Maintainence
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/transmission.html">
+                    Transmission Network Engineering
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/radio-access.html">
+                    Radio Access Network Engineering
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/smart-home.html">
+                    Smart Home Solution and Installation
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/cloud-acs.html"> Cloud ACS Solution </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-column contact-column">
+              <h3 class="column-title">Contact Information</h3>
+              <div class="contact-details">
+                <p><strong>Phone:</strong>03-80809515</p>
+                <p><strong>Email:</strong>workorder@telecom.com.my</p>
+                <p>
+                  <strong>Address:</strong> <br />
+                  No. 169, Jalan Lestari Perdana 7/2, <br />
+                  Lestari Perdana, <br />
+                  43300 Seri Kembangan, Selangor
+                </p>
+                <p>
+                  <strong>Hours:</strong> <br />
+                  Mon-Fri: 09:00 AM - 06:00 PM
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 TEC Telecom. All Rights Reserved.</p>
+        </div>
       </div>
-  </footer>
+    </footer>
 
     <!--Swiper Slider JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Scripts-->
-    <script src="./assets/js/contact-us.js"></script>     
+    <script src="./assets/js/contact-us.js"></script>
     <script src="/assets/js/navigation-menu.js" defer></script>
     <script src="/assets/js/performance.js"></script>
   </body>
