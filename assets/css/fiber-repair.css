@@ -309,7 +309,6 @@ img {
 
 .feature-card {
   background: white;
-  border-radius: 16px;
   padding: clamp(1.25rem, 4vw, 2rem);
   position: relative;
   overflow: hidden;
@@ -358,94 +357,155 @@ img {
   font-weight: 600;
 }
 
-/* Tablet Layout (768px to 1023px) */
+/* Tablet Styles (768px to 1023px) */
 @media screen and (max-width: 1023px) {
-  .content-section {
-    padding: min(5vw, 2.5rem);
-    margin: 0 max(1rem, 2vw);
-    border-radius: 8px;
+  .content-container {
+    padding: 2rem 1.5rem;
   }
 
   .features-container {
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
   .feature-card {
-    padding: clamp(1.25rem, 3vw, 1.75rem);
-    gap: 0.75rem;
+    padding: 1.5rem;
   }
 
-  /* Better touch targets for tablet */
-  .feature-card:active {
-    transform: translateY(-5px);
-    transition: transform 0.1s ease;
-  }
-}
-
-/* Mobile Layout (up to 767px) */
-@media screen and (max-width: 767px) {
-  .content-section {
-    padding: min(4vw, 1.5rem);
-    margin: 0 max(0.5rem, 1vw);
-    border-radius: 6px;
+  .content-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
   }
 
   .content-description {
-    padding: 0 0.5rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+  }
+
+  .feature-description {
+    font-size: 0.95rem;
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+  .content-container {
+    padding: 1.5rem 1rem;
   }
 
   .features-container {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0.25rem;
+    gap: 1.25rem;
   }
 
   .feature-card {
     padding: 1.25rem;
-    gap: 0.5rem;
-    border-radius: 12px;
+    border-radius: 0 20px 0 20px;
   }
 
-  /* Optimize for touch on mobile */
   .feature-card:hover {
-    transform: none;
-    box-shadow: none;
+    transform: translateY(-5px);
+    box-shadow: 3px 3px 0px 0px #888888;
   }
 
-  .feature-card:active {
-    background-color: #f8fafc;
-    transform: translateY(-2px);
-    transition: all 0.1s ease;
+  .content-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
 
-  /* Improve spacing for mobile reading */
+  .content-title::after {
+    width: 40px;
+    height: 3px;
+  }
+
+  .content-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+
   .feature-title {
-    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
   }
 
   .feature-description {
+    font-size: 0.9rem;
     line-height: 1.6;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.3rem;
   }
 }
 
-/* Support for smaller mobile devices */
-@media screen and (max-width: 374px) {
-  .content-section {
-    padding: 2rem;
-    margin: 0;
+/* Small Mobile Styles (up to 479px) */
+@media screen and (max-width: 479px) {
+  .content-container {
+    padding: 2rem 2rem;
   }
 
   .feature-card {
     padding: 1rem;
+    border-radius: 0 15px 0 15px;
   }
 
   .content-title {
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
   }
 
   .content-description {
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .feature-title {
+    font-size: 1.1rem;
+  }
+
+  .feature-description {
+    font-size: 0.85rem;
+  }
+
+  .feature-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Additional optimization for larger screens */
+@media screen and (min-width: 1024px) {
+  .features-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Print styles */
+@media print {
+  .content-section {
+    box-shadow: none;
+  }
+
+  .feature-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .feature-card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
@@ -458,12 +518,12 @@ img {
 
 .services-header {
   margin-bottom: 3rem;
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .services-title {
   text-align: left;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--color-text);
   margin-bottom: 1.5rem;
   position: relative;
@@ -481,8 +541,14 @@ img {
 .services-description {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--color-primary-light);
+  color: var(--color-text);
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .services-title {
+    font-size: 1.5rem;
+  }
 }
 
 /* Process Section */

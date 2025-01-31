@@ -330,16 +330,14 @@ img {
 .service-card {
   position: relative;
   background: white;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid black;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 5px 5px 0px 0px black;
 }
 
 .icon-feature {
@@ -351,6 +349,7 @@ img {
   margin-right: 11rem;
   border-radius: 0.5rem; /* Adds a subtle rounded corner */
   transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effects */
+  border: 1px solid black;
 }
 
 .icon-feature svg {
