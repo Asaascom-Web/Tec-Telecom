@@ -103,7 +103,7 @@ img {
 }
 
 .service-hero {
-  background: linear-gradient(to right, #03045e, #283c63, #639fab);
+  background: linear-gradient(160deg, #03045e 0%, #1e3a8a 50%, #2563eb 100%);
   padding: var(--spacing-xl) 0;
   min-height: 50vh;
   display: flex;
