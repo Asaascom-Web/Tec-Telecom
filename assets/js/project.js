@@ -1,109 +1,132 @@
+// JavaScript for Carousel Functionality
 document.addEventListener('DOMContentLoaded', function() {
-  const dropdownBtn = document.querySelector('.mobile-dropdown-btn');
-  const navTabs = document.querySelector('.nav-tabs');
-  const tabs = document.querySelectorAll('.nav-tab');
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.carousel-button.next');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const dotsNav = document.querySelector('.carousel-dots');
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  const slideMargin = 32; // 2rem margin-right
   
-  // Update dropdown button text
-  function updateDropdownText(text) {
-    if (text) {
-      dropdownBtn.textContent = text;
-    }
-  }
+  // Arrange slides next to each other
+  const setSlidePosition = (slide, index) => {
+      slide.style.left = (slideWidth + slideMargin) * index + 'px';
+  };
+  slides.forEach(setSlidePosition);
 
-  // Get all sections
-  const sections = {};
-  tabs.forEach(tab => {
-    const sectionId = tab.getAttribute('data-section');
-    const section = document.getElementById(sectionId);
-    if (section) {
-      sections[sectionId] = section;
-    }
-  });
-
-  // Scroll detection and section update
-  function updateActiveSection() {
-    // Only run on mobile and tablet
-    if (window.innerWidth >= 1024) return;
-
-    const scrollPosition = window.scrollY + 100; // Offset for better detection
-
-    // Find the current section
-    for (const [sectionId, section] of Object.entries(sections)) {
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        // Update active tab
-        tabs.forEach(tab => {
-          if (tab.getAttribute('data-section') === sectionId) {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            updateDropdownText(tab.textContent);
+  // Create navigation dots
+  const createDots = () => {
+      slides.forEach((_, index) => {
+          const button = document.createElement('button');
+          button.classList.add('dot');
+          button.setAttribute('role', 'tab');
+          button.setAttribute('aria-label', `Slide ${index + 1}`);
+          if (index === 0) {
+              button.classList.add('active');
+              button.setAttribute('aria-selected', 'true');
+          } else {
+              button.setAttribute('aria-selected', 'false');
           }
-        });
-        break;
-      }
-    }
-  }
-
-  // Toggle dropdown
-  dropdownBtn.addEventListener('click', function() {
-    navTabs.classList.toggle('show');
-    this.classList.toggle('active');
-  });
-
-  // Handle tab selection
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      // Remove active class from all tabs
-      tabs.forEach(t => t.classList.remove('active'));
-      
-      // Add active class to clicked tab
-      this.classList.add('active');
-      
-      // Update dropdown button text
-      updateDropdownText(this.textContent);
-      
-      // Hide dropdown
-      navTabs.classList.remove('show');
-      dropdownBtn.classList.remove('active');
-      
-      // Scroll to section
-      const section = this.getAttribute('data-section');
-      const targetSection = document.getElementById(section);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('.nav-container')) {
-      navTabs.classList.remove('show');
-      dropdownBtn.classList.remove('active');
-    }
-  });
-
-  // Add scroll event listener
-  let ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        updateActiveSection();
-        ticking = false;
+          dotsNav.appendChild(button);
       });
-      ticking = true;
-    }
+  };
+  createDots();
+
+  const dots = Array.from(dotsNav.children);
+
+  // Move slide function
+  const moveToSlide = (currentSlide, targetSlide) => {
+      const targetIndex = slides.findIndex(slide => slide === targetSlide);
+      const amountToMove = targetIndex * -(slideWidth + slideMargin);
+      
+      track.style.transform = `translateX(${amountToMove}px)`;
+      currentSlide.classList.remove('current-slide');
+      targetSlide.classList.add('current-slide');
+  };
+
+  // Update dots
+  const updateDots = (currentDot, targetDot) => {
+      currentDot.classList.remove('active');
+      currentDot.setAttribute('aria-selected', 'false');
+      targetDot.classList.add('active');
+      targetDot.setAttribute('aria-selected', 'true');
+  };
+
+  // Update arrows
+  const updateArrows = (targetIndex) => {
+      prevButton.disabled = targetIndex === 0;
+      nextButton.disabled = targetIndex === slides.length - 1;
+  };
+
+  // Handle next button click
+  nextButton.addEventListener('click', () => {
+      const currentSlide = track.querySelector('.current-slide') || slides[0];
+      const nextSlide = currentSlide.nextElementSibling;
+      const currentDot = dotsNav.querySelector('.active');
+      const nextDot = currentDot.nextElementSibling;
+      const nextIndex = slides.findIndex(slide => slide === nextSlide);
+
+      if (nextSlide) {
+          moveToSlide(currentSlide, nextSlide);
+          updateDots(currentDot, nextDot);
+          updateArrows(nextIndex);
+      }
   });
 
-  // Add resize event listener to handle responsive changes
-  let resizeTimeout;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateActiveSection, 100);
+  // Handle previous button click
+  prevButton.addEventListener('click', () => {
+      const currentSlide = track.querySelector('.current-slide') || slides[0];
+      const prevSlide = currentSlide.previousElementSibling;
+      const currentDot = dotsNav.querySelector('.active');
+      const prevDot = currentDot.previousElementSibling;
+      const prevIndex = slides.findIndex(slide => slide === prevSlide);
+
+      if (prevSlide) {
+          moveToSlide(currentSlide, prevSlide);
+          updateDots(currentDot, prevDot);
+          updateArrows(prevIndex);
+      }
   });
 
-  // Initial updates
-  updateActiveSection();
+  // Handle dot clicks
+  dotsNav.addEventListener('click', e => {
+      const targetDot = e.target.closest('button');
+      if (!targetDot) return;
+
+      const currentSlide = track.querySelector('.current-slide') || slides[0];
+      const currentDot = dotsNav.querySelector('.active');
+      const targetIndex = dots.findIndex(dot => dot === targetDot);
+      const targetSlide = slides[targetIndex];
+
+      moveToSlide(currentSlide, targetSlide);
+      updateDots(currentDot, targetDot);
+      updateArrows(targetIndex);
+  });
+
+  // Initialize first slide
+  slides[0].classList.add('current-slide');
+  updateArrows(0);
+
+  // Add touch support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchmove', e => {
+      touchEndX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', () => {
+      const difference = touchStartX - touchEndX;
+      if (Math.abs(difference) > 50) {
+          if (difference > 0) {
+              nextButton.click();
+          } else {
+              prevButton.click();
+          }
+      }
+  });
 });

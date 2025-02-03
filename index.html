@@ -91,6 +91,7 @@
 
     <!-- Scripts-->
     <script src="/assets/js/home.js" defer></script>
+    <script src="/assets/js/project.js" defer></script>
     <script src="/assets/js/navigation-menu.js" defer></script>
     <script src="/assets/js/performance.js"></script>
 </head>
@@ -237,125 +238,128 @@
         <ul class="nav-tabs">
             <li><button class="nav-tab active" data-section="our-services">Our Services</button></li>
             <li><button class="nav-tab" data-section="about-tec">Who We Are</button></li>
+            <li><button class="nav-tab" data-section="featured-projects">Our Featured Projects</button></li>
         </ul>
     </nav>
     </div>
 
    <!-- Services section -->
     <section class="services-section" id="our-services">
-    <div class="services-header">
-        <h2 class="services-title">Our Network solutions</span></h2>
-        <p class="services-description">
-            Discover our expert network solutions designed for optimal performance and reliability. Our services ensure your home or business stays connected with cutting-edge technology and precision engineering.
-        </p>
-    </div>
     <div class="services-container">
-        <nav class="services-navigation">
-            <h2>Our Services</h2>
-            <a href="#ftth" class="service-nav-item active" data-service="ftth">
-                FTTH Network Engineering
-            </a>
-            <a href="#wireless" class="service-nav-item" data-service="wireless">
-                In-building Wireless Design
-            </a>
-            <a href="#fiber" class="service-nav-item" data-service="fiber">
-                Fiber Optic Repair
-            </a>
-            <a href="#transmission" class="service-nav-item" data-service="transmission">
-                Transmission Network Engineering
-            </a>
-            <a href="#radio" class="service-nav-item" data-service="radio">
-                Radio Access Network Engineering
-            </a>
-            <a href="#smarthome" class="service-nav-item" data-service="smarthome">
-                Smart Home Solutions
-            </a>
-            <a href="#cloudacs" class="service-nav-item" data-service="cloudacs">
-                Cloud ACS Solution
-            </a>
-        </nav>
-
-        <div class="services-content">
-            <article id="ftth" class="service-panel active">
-                <h2 class="service-panel-title">FTTH Network Engineering</h2>
-                <p class="service-panel-description">
-                    Our FTTH solutions ensure seamless and reliable high-speed internet connectivity, enabling smart homes and businesses to thrive.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">End to End Network Design</div>
-                    <div class="service-feature-item">FTTH Passive Component Supply, Installation and Testing</div>
-                    <div class="service-feature-item">Local Council Approval Submission , <br>Underground Detection Mapping and Traffic Plan Management Preparation</div>
-                </div>
-            </article>
-
-            <article id="wireless" class="service-panel">
-                <h2 class="service-panel-title">In-building Wireless Design</h2>
-                <p class="service-panel-description">
-                    We design and maintain wireless network infrastructure, ensuring optimal performance in all types of buildings.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">RF Planning and End to end Network Inbuilding</div>
-                    <div class="service-feature-item">Supply , Installation and Testing of Inbuilding System</div>
-                    <div class="service-feature-item">Log Analysis and Optimization of Inbuilding System</div>
-                </div>
-            </article>
-
-            <article id="fiber" class="service-panel">
-                <h2 class="service-panel-title">Fiber Optic Repair</h2>
-                <p class="service-panel-description">
-                    Expert fiber optic repair and maintenance services for uninterrupted network performance and fast troubleshooting.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">Rapid Diagnostic Services</div>
-                    <div class="service-feature-item">Fiber Optic Corrective Maintenance and Rectification</div>
-                </div>
-            </article>
-
-            <article id="transmission" class="service-panel">
-                <h2 class="service-panel-title">Transmission Network Engineering</h2>
-                <p class="service-panel-description">
-                    Comprehensive transmission network design, deployment, and management for enterprise-scale connectivity.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">Campus Network Design</div>
-                    <div class="service-feature-item">Network Solution Consultancy</div>
-                    <div class="service-feature-item">Supply, Installation, Testing, and Commissioning of Wired and Wireless Transmission </div>
-                </div>
-            </article>
-
-            <article id="radio" class="service-panel">
-                <h2 class="service-panel-title">Radio Access Network Engineering</h2>
-                <p class="service-panel-description">
-                    We specialize in deploying and optimizing radio access networks (RAN) for wireless communication services.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">RAN Installation , Testing and Commissioning</div>
-                    <div class="service-feature-item">RAN Design and Site Survey</div>
-                    <div class="service-feature-item">Drive Test Analysis and Optimiziation</div>
-                </div>
-            </article>
-
-            <article id="smarthome" class="service-panel">
-                <h2 class="service-panel-title">Smart Home Solutions</h2>
-                <p class="service-panel-description">
-                    Advanced smart home solutions, including automation, security systems, and seamless device integration.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">Smart Home Design, Installation and Testing</div>
-                    <div class="service-feature-item">Smart Home Solution Consultancy</div>
-                    <div class="service-feature-item">IoT Device Intergration</div>
-                </div>
-            </article>
-            <article id="cloudacs" class="service-panel">
-                <h2 class="service-panel-title">Cloud ACS Solution</h2>
-                <p class="service-panel-description">
-                    Streamline broadband management with our Cloud ACS Solution, offering seamless integration and efficient managed services.
-                </p>
-                <div class="service-features">
-                    <div class="service-feature-item">Cloud ACS Intergration</div>
-                    <div class="service-feature-item">Broadband Managed Services</div>
-                </div>
-            </article>
+        <div class="services-header">
+            <h2 class="services-title">Our Network solutions</span></h2>
+            <p class="services-description">
+                Discover our expert network solutions designed for optimal performance and reliability. Our services ensure your home or business stays connected with cutting-edge technology and precision engineering.
+            </p>
+        </div>
+        <div class="services-carousel">
+            <nav class="services-navigation">
+                <h2>Our Services</h2>
+                <a href="#ftth" class="service-nav-item active" data-service="ftth">
+                    FTTH Network Engineering
+                </a>
+                <a href="#wireless" class="service-nav-item" data-service="wireless">
+                    In-building Wireless Design
+                </a>
+                <a href="#fiber" class="service-nav-item" data-service="fiber">
+                    Fiber Optic Repair
+                </a>
+                <a href="#transmission" class="service-nav-item" data-service="transmission">
+                    Transmission Network Engineering
+                </a>
+                <a href="#radio" class="service-nav-item" data-service="radio">
+                    Radio Access Network Engineering
+                </a>
+                <a href="#smarthome" class="service-nav-item" data-service="smarthome">
+                    Smart Home Solutions
+                </a>
+                <a href="#cloudacs" class="service-nav-item" data-service="cloudacs">
+                    Cloud ACS Solution
+                </a>
+            </nav>
+    
+            <div class="services-content">
+                <article id="ftth" class="service-panel active">
+                    <h2 class="service-panel-title">FTTH Network Engineering</h2>
+                    <p class="service-panel-description">
+                        Our FTTH solutions ensure seamless and reliable high-speed internet connectivity, enabling smart homes and businesses to thrive.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">End to End Network Design</div>
+                        <div class="service-feature-item">FTTH Passive Component Supply, Installation and Testing</div>
+                        <div class="service-feature-item">Local Council Approval Submission , <br>Underground Detection Mapping and Traffic Plan Management Preparation</div>
+                    </div>
+                </article>
+    
+                <article id="wireless" class="service-panel">
+                    <h2 class="service-panel-title">In-building Wireless Design</h2>
+                    <p class="service-panel-description">
+                        We design and maintain wireless network infrastructure, ensuring optimal performance in all types of buildings.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">RF Planning and End to end Network Inbuilding</div>
+                        <div class="service-feature-item">Supply , Installation and Testing of Inbuilding System</div>
+                        <div class="service-feature-item">Log Analysis and Optimization of Inbuilding System</div>
+                    </div>
+                </article>
+    
+                <article id="fiber" class="service-panel">
+                    <h2 class="service-panel-title">Fiber Optic Repair</h2>
+                    <p class="service-panel-description">
+                        Expert fiber optic repair and maintenance services for uninterrupted network performance and fast troubleshooting.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">Rapid Diagnostic Services</div>
+                        <div class="service-feature-item">Fiber Optic Corrective Maintenance and Rectification</div>
+                    </div>
+                </article>
+    
+                <article id="transmission" class="service-panel">
+                    <h2 class="service-panel-title">Transmission Network Engineering</h2>
+                    <p class="service-panel-description">
+                        Comprehensive transmission network design, deployment, and management for enterprise-scale connectivity.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">Campus Network Design</div>
+                        <div class="service-feature-item">Network Solution Consultancy</div>
+                        <div class="service-feature-item">Supply, Installation, Testing, and Commissioning of Wired and Wireless Transmission </div>
+                    </div>
+                </article>
+    
+                <article id="radio" class="service-panel">
+                    <h2 class="service-panel-title">Radio Access Network Engineering</h2>
+                    <p class="service-panel-description">
+                        We specialize in deploying and optimizing radio access networks (RAN) for wireless communication services.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">RAN Installation , Testing and Commissioning</div>
+                        <div class="service-feature-item">RAN Design and Site Survey</div>
+                        <div class="service-feature-item">Drive Test Analysis and Optimiziation</div>
+                    </div>
+                </article>
+    
+                <article id="smarthome" class="service-panel">
+                    <h2 class="service-panel-title">Smart Home Solutions</h2>
+                    <p class="service-panel-description">
+                        Advanced smart home solutions, including automation, security systems, and seamless device integration.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">Smart Home Design, Installation and Testing</div>
+                        <div class="service-feature-item">Smart Home Solution Consultancy</div>
+                        <div class="service-feature-item">IoT Device Intergration</div>
+                    </div>
+                </article>
+                <article id="cloudacs" class="service-panel">
+                    <h2 class="service-panel-title">Cloud ACS Solution</h2>
+                    <p class="service-panel-description">
+                        Streamline broadband management with our Cloud ACS Solution, offering seamless integration and efficient managed services.
+                    </p>
+                    <div class="service-features">
+                        <div class="service-feature-item">Cloud ACS Intergration</div>
+                        <div class="service-feature-item">Broadband Managed Services</div>
+                    </div>
+                </article>
+            </div>
         </div>
     </div>
     </section>
@@ -405,6 +409,242 @@
                 <a href="/who-we-are.html" class="cta-button">
                 Learn More About Us
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section class="projects-section" aria-labelledby="projects-title" id="featured-projects">
+        <div class="project-container">
+            <!-- Header Section -->
+            <div class="services-header">
+                <h2 id="projects-title" class="services-title">Our Featured Projects</h2>
+                <p class="services-description">
+                    We've engineered comprehensive wireless solutions for mission-critical environments across multiple sectors.
+                </p>
+            </div>
+            
+            <!-- Carousel Section -->
+            <div class="carousel-container" role="region" aria-label="Projects carousel">
+                <div class="overflow-container">
+                    <div class="carousel-track" role="list">
+                        <!-- Project Card 1 -->
+                        <div class="carousel-slide" role="listitem">
+                            <article class="card" tabindex="0">
+                                <div class="card-image">
+                                  <img
+                                    src="/public/Project 18.png"
+                                    alt="FTTH Network Implementation"
+                                    loading="lazy"
+                                  />
+                                </div>
+                                <div class="card-content">
+                                  <span class="card-tag service card-tag-static" role="tag"
+                                    >FTTH</span
+                                  >
+                                  <h3 class="card-title">Residensi Larkin Indah Drop Cable Installation</h3>
+                                  <a href="#" class="card-cta">
+                                    View Project Details
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="cta-arrow"
+                                    >
+                                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                                      <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                  </a>
+                                </div>
+                                <div class="card-hover-content">
+                                  <div class="card-tags" role="list">
+                                    <span class="card-tag operator" role="listitem"
+                                    >PR1MA</span
+                                    >
+                                    <span class="card-tag service" role="listitem"
+                                      >FTTH</span
+                                    >
+                                    <span class="card-tag duration" role="listitem">3 months</span>
+                                  </div>
+                                  <h3 class="card-title">Residensi Larkin Indah Drop Cable Installation</h3>
+                                  <p class="card-description">
+                                    Installed drop cables to connect homes to the main FTTH network.
+                                </div>
+                              </article>
+                        </div>
+                        <div class="carousel-slide" role="listitem">
+                            <article class="card" tabindex="0">
+                                <div class="card-image">
+                                  <img
+                                    src="/public/Project 02.png"
+                                    alt="FTTH Network Implementation"
+                                    loading="lazy"
+                                  />
+                                </div>
+                                <div class="card-content">
+                                  <span class="card-tag service card-tag-static" role="tag"
+                                    >Inbuilding Wireless Solutions</span
+                                  >
+                                  <h3 class="card-title">Menara Prudential In-Building System Installation</h3>
+                                  <a href="#" class="card-cta">
+                                    View Project Details
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="cta-arrow"
+                                    >
+                                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                                      <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                  </a>
+                                </div>
+                                <div class="card-hover-content">
+                                  <div class="card-tags" role="list">
+                                    <span class="card-tag operator" role="listitem"
+                                      >TimeDotCom</span
+                                    >
+                                    <span class="card-tag service" role="listitem"
+                                      >Inbuilding Wireless Solutions</span
+                                    >
+                                    <span class="card-tag duration" role="listitem">6 months</span>
+                                  </div>
+                                  <h3 class="card-title">Menara Prudential In-Building System Installation</h3>
+                                  <p class="card-description">
+                                    Designed and installed a wireless in-building system to enhance connectivity inside the building.
+                                  </p>
+                                </div>
+                              </article>
+                        </div>
+                        <div class="carousel-slide" role="listitem">
+                            <article class="card" tabindex="0">
+                                <div class="card-image">
+                                  <img
+                                    src="/public/Project 05.png"
+                                    alt="FTTH Network Implementation"
+                                    loading="lazy"
+                                  />
+                                </div>
+                                <div class="card-content">
+                                  <span class="card-tag service card-tag-static" role="tag"
+                                    >Fiber Repair and Maintenance</span
+                                  >
+                                  <h3 class="card-title">TimeDotCom Broadband Maintenance/Service Activation</h3>
+                                  <a href="#" class="card-cta">
+                                    View Project Details
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="cta-arrow"
+                                    >
+                                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                                      <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                  </a>
+                                </div>
+                                <div class="card-hover-content">
+                                  <div class="card-tags" role="list">
+                                    <span class="card-tag operator" role="listitem"
+                                    >TimeDotCom</span
+                                  >
+                                    <span class="card-tag service" role="listitem"
+                                      >Fiber Repair and Maintenance</span
+                                    >
+                                    <span class="card-tag duration" role="listitem">3 months</span>
+                                  </div>
+                                  <h3 class="card-title">TimeDotCom Broadband Maintenance/Service Activation</h3>
+                                  <p class="card-description">
+                                    Conducted maintenance and service activation for TimeDotCom broadband customers.
+                                  </p>
+                                </div>
+                              </article>
+                        </div>
+                        <div class="carousel-slide" role="listitem">
+                            <article class="card" tabindex="0">
+                                <div class="card-image">
+                                  <img
+                                    src="/public/Project 04.png"
+                                    alt="FTTH Network Implementation"
+                                    loading="lazy"
+                                  />
+                                </div>
+                                <div class="card-content">
+                                  <span class="card-tag service card-tag-static" role="tag"
+                                    >Transmission Network Engineering</span
+                                  >
+                                  <h3 class="card-title">Maxis Nationwide SDH Circuit Audit</h3>
+                                  <a href="#" class="card-cta">
+                                    View Project Details
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      class="cta-arrow"
+                                    >
+                                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                                      <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                  </a>
+                                </div>
+                                <div class="card-hover-content">
+                                  <div class="card-tags" role="list">
+                                    <span class="card-tag operator" role="listitem"
+                                    >Maxis</span
+                                  >
+                                    <span class="card-tag service" role="listitem"
+                                      >Tranmission Network Engineering</span
+                                    >
+                                    <span class="card-tag duration" role="listitem">7 months</span>
+                                  </div>
+                                  <h3 class="card-title">Maxis Nationwide SDH Circuit Audit</h3>
+                                  <p class="card-description">
+                                    Conducted an audit of SDH circuits nationwide to enhance transmission network performance.
+                                  </p>
+                                </div>
+                              </article>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <!-- Navigation Controls -->
+                <div class="carousel-navigation" role="group" aria-label="Carousel controls">
+                    <div class="carousel-arrows">
+                        <button class="carousel-button prev" aria-label="Previous slide" type="button">
+                            <span aria-hidden="true">←</span>
+                        </button>
+                        <button class="carousel-button next" aria-label="Next slide" type="button">
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" role="tablist" aria-label="Slide dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
             </div>
         </div>
     </section>

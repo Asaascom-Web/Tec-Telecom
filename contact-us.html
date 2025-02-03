@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Contact Us</title>
-    <link rel="icon" href="/public/TEC Telecom-Logo.png" type="image/png">
+    <link rel="icon" href="/public/TEC Telecom-Logo.png" type="image/png" />
 
     <!-- For modern browsers - ICO format -->
-    <link rel="icon" type="image/x-icon" href="/public/TEC Telecom-Logo.png">
+    <link rel="icon" type="image/x-icon" href="/public/TEC Telecom-Logo.png" />
 
     <!-- For modern browsers - PNG format -->
-    <link rel="icon" type="image/png" href="/public/TEC Telecom-Logo.png">
+    <link rel="icon" type="image/png" href="/public/TEC Telecom-Logo.png" />
 
     <!-- For iOS devices -->
-    <link rel="apple-touch-icon" href="/public/TEC Telecom-Logo.png">
+    <link rel="apple-touch-icon" href="/public/TEC Telecom-Logo.png" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/contact-us.css" />
@@ -103,7 +103,8 @@
               <!--Dropdown-->
               <li class="dropdown-item">
                 <div class="nav-link">
-                  Our Services <i class="ri-arrow-down-s-line dropdown-arrow"></i>
+                  Our Services
+                  <i class="ri-arrow-down-s-line dropdown-arrow"></i>
                 </div>
 
                 <ul class="dropdown-menu">
@@ -174,57 +175,98 @@
     </header>
 
     <main class="contact-container">
-      <article class="form">
-        <section class="contact-info">
-          <h2>Contact Information</h2>
-          <p class="text">
-            We'd love to hear from you! Whether you have questions about our
-            services, need support, or want to discuss a potential project, our
-            team is here to help.
-          </p>
+      <!-- Replace the existing form article with this new structure -->
+      <article class="contact-grid">
+        <!-- Left Column: Info + Map -->
+        <div class="contact-left">
+          <!-- Contact Info Section -->
+          <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p class="text">
+              We'd love to hear from you! Whether you have questions about our
+              services, need support, or want to discuss a potential project,
+              our team is here to help.
+            </p>
 
-          <section class="info">
-            <address class="information">
-              <div class="icon">
-                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              </div>
-              <p>
-                No. 169, Jalan Lestari Perdana 7/2,<br />
-                Lestari Perdana,<br />
-                43300 Seri Kembangan, Selangor
-              </p>
-            </address>
+            <section class="info">
+              <address class="information">
+                <div class="icon">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                </div>
+                <p>
+                  No. 169, Jalan Lestari Perdana 7/2,
+                  Lestari Perdana,
+                  43300 Seri Kembangan, Selangor
+                </p>
+              </address>
 
-            <address class="information">
-              <div class="icon">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
-              </div>
-              <a href="mailto:workorder@telecom.com.my"
-                >workorder@telecom.com.my</a
-              >
-            </address>
+              <address class="information">
+                <div class="icon">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                </div>
+                <a href="mailto:workorder@telecom.com.my"
+                  >workorder@telecom.com.my</a
+                >
+              </address>
 
-            <address class="information">
-              <div class="icon">
-                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <address class="information">
+                <div class="icon">
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                </div>
+                <a href="tel:0380809515">03-80809515</a>
+              </address>
+
+              <address class="information">
+                <div class="icon">
+                  <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                </div>
+                <a href="tel:0380809516">03-80827754</a>
+              </address>
+
+              <address class="information whatsapp-info">
+                <div class="icon">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </div>
+                <a
+                  href="https://wa.me/+60148207249"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  +60 14-820 7249 (WhatsApp)
+                </a>
+              </address>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section">
+              <div class="map-wrapper">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127500.55896660096!2d101.60747102983211!3d2.9884383221737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb59028b0dc33%3A0xa00335ff9d52ad75!2sTEC%20Telecom%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1738304076092!5m2!1sen!2smy"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
-              <a href="tel:0380809515">03-80809515</a>
-            </address>
+            </section>
+
+            <section class="social-media">
+              <h2>Connect with us:</h2>
+              <nav class="social-icons">
+                <a href="#" aria-label="Follow us on Instagram">
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="Follow us on TikTok">
+                  <i class="fab fa-tiktok" aria-hidden="true"></i>
+                </a>
+              </nav>
+            </section>
           </section>
+        </div>
 
-          <section class="social-media">
-            <h2>Connect with us:</h2>
-            <nav class="social-icons">
-              <a href="#" aria-label="Follow us on Instagram">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="#" aria-label="Follow us on TikTok">
-                <i class="fab fa-tiktok" aria-hidden="true"></i>
-              </a>
-            </nav>
-          </section>
-        </section>
-
+        <!-- Right Column: Contact Form -->
         <section class="contact-form">
           <form action="https://formspree.io/f/mbllqdod" method="POST">
             <h2>Send us a Message</h2>
