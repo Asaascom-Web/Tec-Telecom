@@ -288,7 +288,7 @@ nav {
 
 /* Active state styles */
 .nav-tab.active {
-  color: #3b82f6;
+  color: var(--color-background);
   font-weight: 600;
 }
 
@@ -304,12 +304,13 @@ nav {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 0.375rem;
-  color: #3b82f6;
+  color: var(--color-background);
   font-weight: 600;
   font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
   position: relative;
+  border: 1px solid grey;
 }
 
 .mobile-dropdown-btn::after {
@@ -329,7 +330,7 @@ nav {
 /* Small mobile devices */
 @media screen and (max-width: 480px) {
   nav {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 2rem;
     position: relative;
   }
 
@@ -348,7 +349,7 @@ nav {
     border-radius: 0.375rem;
     margin-top: 0.25rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem;
+    padding: 2rem;
     flex-direction: column;
     z-index: 100;
   }

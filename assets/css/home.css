@@ -173,7 +173,7 @@ nav {
 
 /* Active state styles */
 .nav-tab.active {
-  color: #3b82f6;
+  color: var(--color-background);
   font-weight: 600;
 }
 
@@ -189,12 +189,13 @@ nav {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 0.375rem;
-  color: #3b82f6;
+  color: var(--color-background);
   font-weight: 600;
   font-size: 0.9rem;
   text-align: left;
   cursor: pointer;
   position: relative;
+  border: 1px solid grey;
 }
 
 .mobile-dropdown-btn::after {
@@ -214,7 +215,7 @@ nav {
 /* Small mobile devices */
 @media screen and (max-width: 480px) {
   nav {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 2rem;
     position: relative;
   }
 
@@ -233,7 +234,7 @@ nav {
     border-radius: 0.375rem;
     margin-top: 0.25rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem;
+    padding: 2rem;
     flex-direction: column;
     z-index: 100;
   }
@@ -1141,7 +1142,6 @@ nav {
 .service-nav-item:hover,
 .service-nav-item.active {
   background-color: var(--color-hover);
-  transform: translateX(10px);
 }
 
 .service-nav-item::after {
@@ -1409,7 +1409,7 @@ nav {
 /* Mobile Styles (up to 767px) */
 @media screen and (max-width: 767px) {
   .services-section {
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
   }
 
   .services-navigation {

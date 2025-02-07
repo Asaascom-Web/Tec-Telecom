@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Reset automatic cycling timer
           clearInterval(cycleInterval);
-          cycleInterval = setInterval(cycleServices, 5000);
+          cycleInterval = setInterval(cycleServices, 10000);
       });
   });
 
   // Initialize auto-cycling
-  cycleInterval = setInterval(cycleServices, 5000);
+  cycleInterval = setInterval(cycleServices, 10000);
 
   // ==========================================
   // Navigation Setup
