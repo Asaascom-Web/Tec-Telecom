@@ -92,6 +92,7 @@
     <!-- Scripts-->
     <script src="/assets/js/home.js" defer></script>
     <script src="/assets/js/project.js" defer></script>
+    <script src="/assets/js/dropdown.js"></script>
     <script src="/assets/js/navigation-menu.js" defer></script>
     <script src="/assets/js/performance.js"></script>
 </head>
@@ -233,14 +234,17 @@
     </section>
 
     <div class="nav-container">
-    <div class="progress-bar" id="progressBar"></div>
-    <nav>
-        <ul class="nav-tabs">
-            <li><button class="nav-tab active" data-section="our-services">Our Services</button></li>
-            <li><button class="nav-tab" data-section="about-tec">Who We Are</button></li>
-            <li><button class="nav-tab" data-section="featured-projects">Featured Projects</button></li>
+      <div class="progress-bar" id="progressBar"></div>
+      <nav>
+        <button class="mobile-dropdown-btn">
+          FTTH
+        </button>
+        <ul class="nav-tabs dropdown">
+          <li><button class="nav-tab active" data-section="our-services">Our Services</button></li>
+          <li><button class="nav-tab" data-section="about-tec">Who We Are</button></li>
+          <li><button class="nav-tab" data-section="featured-projects">Featured Projects</button></li>
         </ul>
-    </nav>
+      </nav>
     </div>
 
    <!-- Services section -->

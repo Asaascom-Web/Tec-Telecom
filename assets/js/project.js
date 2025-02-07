@@ -53,3 +53,4 @@ window.addEventListener('resize', () => {
 // Initial setup
 updateSlidesToShow();
 updateCarousel();
+
