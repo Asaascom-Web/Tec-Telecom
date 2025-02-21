@@ -14,7 +14,7 @@
   --color-light-bg: #f4f4f4;
 
   /* Layout Dimensions */
-  --header-height: 4rem;
+  --header-height: 4.5rem;
   --border-radius: 0.5rem;
 
   /* Typography */
@@ -123,6 +123,32 @@ img {
   width: auto;
 }
 
+/* Mobile Actions Container */
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Mobile Contact Button */
+.mobile-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transition: background-color var(--transition-speed) ease;
+  margin-right: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mobile-contact:hover {
+  background-color: var(--color-hover);
+}
+
 /* Mobile Navigation Toggle */
 .nav-toggle {
   position: relative;
@@ -194,6 +220,26 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Desktop Contact Button */
+.nav-link.contact-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 2rem;
+  transition: background-color var(--transition-speed) ease;
+  border: 2px solid var(--color-primary);
+}
+
+.nav-link.contact-btn:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+  color: var(--color-white);
+}
+
+.nav-link.contact-btn::after {
+  display: none;
+}
+
 /* Dropdown Styles */
 .dropdown-item {
   position: relative;
@@ -207,7 +253,7 @@ img {
 }
 
 .dropdown-item.active .dropdown-menu {
-  max-height: 1000px; /* This should be larger than your actual content height */
+  max-height: 1000px;
 }
 
 .dropdown-item.active .dropdown-menu,
@@ -289,37 +335,6 @@ img {
     transition: color 0.3s ease;
   }
 
-  .button {
-    font-family: bely-display, sans-serif;
-    color: var(--color-primary); /* Adapting to --color-white */
-    background: none;
-  }
-
-  .button::before {
-    content: "";
-    background: var(--color-primary); /* Adapting to --color-primary */
-    -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
-    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
-    transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1),
-      -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
-  }
-
-  .button:hover::before {
-    background: var(--color-hover); /* Adapting to --color-hover */
-    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  }
-
-  .button span {
-    display: block;
-    mix-blend-mode: difference;
-    transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
-  }
-
-  .button:hover span {
-    transform: translate3d(-10px, 0, 0);
-  }
-
   /* Underline Animation on Hover */
   .nav-link::after {
     content: "";
@@ -338,6 +353,16 @@ img {
 
   .nav-link:hover::after {
     width: 100%;
+  }
+
+  /* Desktop Contact Button */
+  .nav-link.contact-btn {
+    display: flex;
+    margin-left: 1rem;
+  }
+
+  .mobile-contact {
+    display: none;
   }
 
   /* Dropdown Container */
@@ -375,110 +400,61 @@ img {
     margin-top: 1.5rem;
   }
 
-  /* Dropdown Item Styling */
+  /* Dropdown Link Colors */
   .dropdown-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     color: var(--color-primary);
-    padding: 0.75rem 1rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .dropdown-link::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background-color: transparent;
-    transition: background-color 0.2s ease;
-  }
-
-  .dropdown-link:hover {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-  }
-
-  .dropdown-link:hover::before {
-    background-color: var(--color-hover);
-  }
-
-  /* Dropdown Icons */
-  .dropdown-link i {
-    color: var(--color-hover);
-    font-size: 1.25rem;
-    transition: transform 0.2s ease;
-  }
-
-  .dropdown-link:hover i {
-    transform: translateX(3px);
-  }
-
-  /* Dropdown Hover Effect */
-  .dropdown-item:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  /* Dropdown Separator */
-  .dropdown-link:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 
-  /* Active Dropdown State */
-  .dropdown-link.active {
-    background-color: rgba(0, 119, 182, 0.05);
-    font-weight: 600;
-  }
-
-  /* Dropdown Arrow */
-  .dropdown-arrow {
-    margin-left: auto;
-    transition: transform 0.3s ease;
+  .dropdown-link:hover {
+    background-color: var(--color-accent-lighter);
     color: var(--color-hover);
   }
+}
 
-  .dropdown-item:hover .dropdown-arrow {
-    transform: rotate(180deg);
+/* Mobile Styles */
+@media screen and (max-width: 1118px) {
+  .mobile-actions {
+    display: flex;
+  }
+
+  .nav-link.contact-btn {
+    display: none;
+  }
+
+  .nav-toggle {
+    margin-left: 1rem;
   }
 }
 
 /* Small Mobile Optimization */
 @media screen and (max-width: 340px) {
   .nav-logo img {
-    height: 30px;
+    height: 25px;
   }
 
-  .nav-link,
-  .dropdown-link {
-    padding: 0.75rem;
+  .mobile-contact {
+    width: 2.25rem;
+    height: 2.25rem;
   }
-}
 
-/* Accessibility Modes */
-@media print {
-  .header,
   .nav-toggle {
-    display: none;
+    font-size: 1.25rem;
   }
 }
 
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
   }
 }
 
-/* Performance Optimization for Animations */
-@media (prefers-reduced-motion: no-preference) {
-  * {
-    scroll-behavior: smooth;
-    transition: all var(--transition-speed) ease;
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .nav-link.contact-btn,
+  .mobile-contact {
+    border: 2px solid var(--color-primary);
   }
 }
 
@@ -854,3 +830,4 @@ footer {
       font-size: 0.85rem;
   }
 }
+
