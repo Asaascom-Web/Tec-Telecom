@@ -844,6 +844,50 @@ nav {
   animation-play-state: paused;
 }
 
+@media (max-width: 768px) {
+  .product-slider {
+    padding: 20px 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slider-track {
+    gap: 15px;
+    animation-duration: 25s; /* Slightly slower on mobile for readability */
+  }
+
+  .slide {
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .slide img {
+    height: 200px;
+    border-radius: 6px;
+  }
+
+  .slide p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    min-width: 160px;
+    padding: 8px;
+  }
+
+  .slide img {
+    height: 160px;
+  }
+
+  .slide p {
+    font-size: 13px;
+  }
+}
+
+
 
 
 
