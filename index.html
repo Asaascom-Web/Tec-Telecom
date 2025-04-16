@@ -74,6 +74,14 @@
     <!--Font Awesome CSS -->
     <script src="https://kit.fontawesome.com/a780dab40f.js" crossorigin="anonymous"></script>
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    
+
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -220,25 +228,61 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-              <h1 class="hero-heading">
-                Championing <br><span>Telecom Infrastructure</span>
-              <p class="hero-description">
-                Pioneering telecommunications engineering solutions with precision, innovation, and 
-                unparalleled expertise across Malaysia
-              </p>
-      
-              <div class="hero-btns">
-                <button class="btn hero-view-btn" data-section="our-services">
-                    View Our Services
-                    <i class="ri-arrow-right-line"></i>
-                </button>
-              </div>
+    <!-- <section class="hero-section">
+      <div class="hero-container">
+          <div class="hero-content">
+            <h1 class="hero-heading">
+              Championing <br><span>Telecom Infrastructure</span>
+            <p class="hero-description">
+              Pioneering telecommunications engineering solutions with precision, innovation, and 
+              unparalleled expertise across Malaysia
+            </p>
+    
+            <div class="hero-btns">
+              <button class="btn hero-view-btn" data-section="our-services">
+                  View Our Services
+                  <i class="ri-arrow-right-line"></i>
+              </button>
             </div>
-        </div>
+          </div>
+      </div>
+    </section> -->
+
+
+    <section class="product-slider">
+      <div class="slider-track">
+        <!-- Original Slides -->
+        <a href="promotion.html" class="slide">
+          <img src="products/cctv-home.jpg" alt="CCTV Installation" />
+          <p>CCTV Installation</p>
+        </a>
+        <a href="promotion.html" class="slide">
+          <img src="products/aircon.jpg" alt="Air-Con Servicing" />
+          <p>Air Conditioning Servicing</p>
+        </a>
+        <a href="promotion.html" class="slide">
+          <img src="products/network-setup.jpg" alt="Network Setup" />
+          <p>Fiber Optic Troubleshooting</p>
+        </a>
+    
+        <!-- Duplicate Slides for Infinite Loop -->
+        <a href="promotion.html" class="slide">
+          <img src="products/cctv-outside.jpg" alt="CCTV Installation" />
+          <p>CCTV Security Systems</p>
+        </a>
+        <a href="promotion.html" class="slide">
+          <img src="products/air-conditioner-cleaning.jpg" alt="Air-Con Servicing" />
+          <p>Air Conditioning Installation</p>
+        </a>
+        <a href="promotion.html" class="slide">
+          <img src="products/optik-ser.jpg" alt="Fiber Optic Servicing" />
+          <p>Fiber Optic Maintenance</p>
+        </a>
+      </div>
     </section>
+    
+    
+    
 
     <div class="nav-container">
       <div class="progress-bar" id="progressBar"></div>

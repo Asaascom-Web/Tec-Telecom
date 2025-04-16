@@ -250,7 +250,7 @@ img {
 /* Slideshow Dots */
 .slideshow-controls {
   display: none;
-  position: absolute;
+  position: absolute; 
   bottom: 0.5rem;
   left: 0;
   right: 0;
@@ -780,6 +780,72 @@ nav {
   display: flex;
   align-items: center;
 }
+
+.product-slider {
+  overflow: hidden;
+  margin-top: 2px;
+  padding: 30px 0;
+  position: relative;
+  background: linear-gradient(135deg, #f0f4ff, #d8e3f9); /* Soft blue gradient */
+  background-image: url("/public/freepik__retouch__44840.png");
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll-left 20s linear infinite; /* faster speed */
+}
+
+.slide {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  min-width: 250px;
+  flex: 0 0 auto;
+  background-color: #ffffff29;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.slide img {
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  margin: 0;
+  font-weight: 600;
+  color: #fbfbfb;
+  font-size: 16px;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: pause on hover */
+.product-slider:hover .slider-track {
+  animation-play-state: paused;
+}
+
+
+
 
 .hero-section::before {
   content: "";
